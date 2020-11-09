@@ -52,6 +52,18 @@
 					"strict" : false
 				},
 				{
+					"name" : "HEX5[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[6]",
+					"strict" : false
+				},
+				{
 					"name" : "HEX2[0]",
 					"strict" : false
 				},

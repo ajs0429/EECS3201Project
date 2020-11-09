@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Mon Nov 09 10:02:49 2020
+Analysis & Synthesis Status : Successful - Mon Nov 09 10:38:54 2020
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : Adam3201Project
 Top-level Entity Name : Adam3201Project
 Family : MAX 10
-Total logic elements : 229
-    Total combinational functions : 229
-    Dedicated logic registers : 24
-Total registers : 24
-Total pins : 78
+Total logic elements : 233
+    Total combinational functions : 233
+    Dedicated logic registers : 28
+Total registers : 28
+Total pins : 85
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

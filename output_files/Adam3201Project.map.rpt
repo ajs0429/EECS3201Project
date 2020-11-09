@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Adam3201Project
-Mon Nov 09 10:02:49 2020
+Mon Nov 09 10:38:54 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -15,7 +15,7 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
   9. General Register Statistics
- 10. Parameter Settings for User Entity Instance: ClockDivider2K:cdiv2k
+ 10. Parameter Settings for User Entity Instance: ClockDivider500K:cdiv500k
  11. Parameter Settings for User Entity Instance: MotorPWM:motor1
  12. Parameter Settings for User Entity Instance: MotorPWM:motor2
  13. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2
@@ -28,9 +28,10 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
  20. Port Connectivity Checks: "seg7:h2"
  21. Port Connectivity Checks: "seg7:h1"
  22. Port Connectivity Checks: "seg7:h0"
- 23. Post-Synthesis Netlist Statistics for Top Partition
- 24. Elapsed Time Per Partition
- 25. Analysis & Synthesis Messages
+ 23. Port Connectivity Checks: "seg7:h5"
+ 24. Post-Synthesis Netlist Statistics for Top Partition
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
 
 
 
@@ -57,16 +58,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Nov 09 10:02:49 2020       ;
+; Analysis & Synthesis Status        ; Successful - Mon Nov 09 10:38:54 2020       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; Adam3201Project                             ;
 ; Top-level Entity Name              ; Adam3201Project                             ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 229                                         ;
-;     Total combinational functions  ; 229                                         ;
-;     Dedicated logic registers      ; 24                                          ;
-; Total registers                    ; 24                                          ;
-; Total pins                         ; 78                                          ;
+; Total logic elements               ; 233                                         ;
+;     Total combinational functions  ; 233                                         ;
+;     Dedicated logic registers      ; 28                                          ;
+; Total registers                    ; 28                                          ;
+; Total pins                         ; 85                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -186,8 +187,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------+---------+
 ; Adam3201Project.v                ; yes             ; User Verilog HDL File        ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v          ;         ;
 ; MotorPWM.v                       ; yes             ; User Verilog HDL File        ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/MotorPWM.v                 ;         ;
-; ClockDivider2K.v                 ; yes             ; User Verilog HDL File        ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/ClockDivider2K.v           ;         ;
 ; seg7.v                           ; yes             ; User Verilog HDL File        ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/seg7.v                     ;         ;
+; ClockDivider500K.v               ; yes             ; User Verilog HDL File        ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/ClockDivider500K.v         ;         ;
 ; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf                                    ;         ;
 ; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc                                   ;         ;
 ; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc                               ;         ;
@@ -212,36 +213,36 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                                                                                                              ;
-+---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-; Resource                                    ; Usage                                                                                                                      ;
-+---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 229                                                                                                                        ;
-;                                             ;                                                                                                                            ;
-; Total combinational functions               ; 229                                                                                                                        ;
-; Logic element usage by number of LUT inputs ;                                                                                                                            ;
-;     -- 4 input functions                    ; 46                                                                                                                         ;
-;     -- 3 input functions                    ; 53                                                                                                                         ;
-;     -- <=2 input functions                  ; 130                                                                                                                        ;
-;                                             ;                                                                                                                            ;
-; Logic elements by mode                      ;                                                                                                                            ;
-;     -- normal mode                          ; 145                                                                                                                        ;
-;     -- arithmetic mode                      ; 84                                                                                                                         ;
-;                                             ;                                                                                                                            ;
-; Total registers                             ; 24                                                                                                                         ;
-;     -- Dedicated logic registers            ; 24                                                                                                                         ;
-;     -- I/O registers                        ; 0                                                                                                                          ;
-;                                             ;                                                                                                                            ;
-; I/O pins                                    ; 78                                                                                                                         ;
-;                                             ;                                                                                                                            ;
-; Embedded Multiplier 9-bit elements          ; 0                                                                                                                          ;
-;                                             ;                                                                                                                            ;
-; Maximum fan-out node                        ; lpm_divide:Mod1|lpm_divide_fkl:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_6fe:divider|add_sub_6_result_int[7]~10 ;
-; Maximum fan-out                             ; 18                                                                                                                         ;
-; Total fan-out                               ; 747                                                                                                                        ;
-; Average fan-out                             ; 1.82                                                                                                                       ;
-+---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                         ;
++---------------------------------------------+---------------------------------------+
+; Resource                                    ; Usage                                 ;
++---------------------------------------------+---------------------------------------+
+; Estimated Total logic elements              ; 233                                   ;
+;                                             ;                                       ;
+; Total combinational functions               ; 233                                   ;
+; Logic element usage by number of LUT inputs ;                                       ;
+;     -- 4 input functions                    ; 45                                    ;
+;     -- 3 input functions                    ; 53                                    ;
+;     -- <=2 input functions                  ; 135                                   ;
+;                                             ;                                       ;
+; Logic elements by mode                      ;                                       ;
+;     -- normal mode                          ; 145                                   ;
+;     -- arithmetic mode                      ; 88                                    ;
+;                                             ;                                       ;
+; Total registers                             ; 28                                    ;
+;     -- Dedicated logic registers            ; 28                                    ;
+;     -- I/O registers                        ; 0                                     ;
+;                                             ;                                       ;
+; I/O pins                                    ; 85                                    ;
+;                                             ;                                       ;
+; Embedded Multiplier 9-bit elements          ; 0                                     ;
+;                                             ;                                       ;
+; Maximum fan-out node                        ; ClockDivider500K:cdiv500k|LessThan0~2 ;
+; Maximum fan-out                             ; 19                                    ;
+; Total fan-out                               ; 775                                   ;
+; Average fan-out                             ; 1.79                                  ;
++---------------------------------------------+---------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -249,8 +250,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                              ; Entity Name         ; Library Name ;
 +----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |Adam3201Project                       ; 229 (1)             ; 24 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 78   ; 0            ; 0          ; |Adam3201Project                                                                                                 ; Adam3201Project     ; work         ;
-;    |ClockDivider2K:cdiv2k|             ; 23 (23)             ; 15 (15)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|ClockDivider2K:cdiv2k                                                                           ; ClockDivider2K      ; work         ;
+; |Adam3201Project                       ; 233 (1)             ; 28 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 85   ; 0            ; 0          ; |Adam3201Project                                                                                                 ; Adam3201Project     ; work         ;
+;    |ClockDivider500K:cdiv500k|         ; 27 (27)             ; 19 (19)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|ClockDivider500K:cdiv500k                                                                       ; ClockDivider500K    ; work         ;
 ;    |MotorPWM:motor1|                   ; 17 (17)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|MotorPWM:motor1                                                                                 ; MotorPWM            ; work         ;
 ;    |lpm_divide:Div0|                   ; 46 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
 ;       |lpm_divide_8sl:auto_generated|  ; 46 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Div0|lpm_divide_8sl:auto_generated                                                   ; lpm_divide_8sl      ; work         ;
@@ -298,8 +299,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 24    ;
-; Number of registers using Synchronous Clear  ; 15    ;
+; Total registers                              ; 28    ;
+; Number of registers using Synchronous Clear  ; 19    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -308,13 +309,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: ClockDivider2K:cdiv2k ;
-+----------------+-----------------+---------------------------------+
-; Parameter Name ; Value           ; Type                            ;
-+----------------+-----------------+---------------------------------+
-; DIVISOR        ; 110000110101000 ; Unsigned Binary                 ;
-+----------------+-----------------+---------------------------------+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ClockDivider500K:cdiv500k ;
++----------------+--------------------+----------------------------------+
+; Parameter Name ; Value              ; Type                             ;
++----------------+--------------------+----------------------------------+
+; DIVISOR        ; 000000000001100100 ; Unsigned Binary                  ;
++----------------+--------------------+----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -498,29 +499,39 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "seg7:h5"                                                                                                                                                                        ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; d    ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (4 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; d[0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                     ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 78                          ;
-; cycloneiii_ff         ; 24                          ;
-;     SCLR              ; 15                          ;
+; boundary_port         ; 85                          ;
+; cycloneiii_ff         ; 28                          ;
+;     SCLR              ; 19                          ;
 ;     plain             ; 9                           ;
-; cycloneiii_lcell_comb ; 233                         ;
-;     arith             ; 84                          ;
+; cycloneiii_lcell_comb ; 238                         ;
+;     arith             ; 88                          ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 32                          ;
+;         2 data inputs ; 36                          ;
 ;         3 data inputs ; 51                          ;
-;     normal            ; 149                         ;
+;     normal            ; 150                         ;
 ;         0 data inputs ; 15                          ;
-;         1 data inputs ; 5                           ;
-;         2 data inputs ; 81                          ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 82                          ;
 ;         3 data inputs ; 2                           ;
-;         4 data inputs ; 46                          ;
+;         4 data inputs ; 45                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 14.60                       ;
-; Average LUT depth     ; 9.45                        ;
+; Average LUT depth     ; 9.18                        ;
 +-----------------------+-----------------------------+
 
 
@@ -529,7 +540,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:06     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -539,7 +550,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Mon Nov 09 10:02:21 2020
+    Info: Processing started: Mon Nov 09 10:38:25 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Adam3201Project -c Adam3201Project
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -551,6 +562,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file clockdi
     Info (12023): Found entity 1: ClockDivider2K File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/ClockDivider2K.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file seg7.v
     Info (12023): Found entity 1: seg7 File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/seg7.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file clockdivider500k.v
+    Info (12023): Found entity 1: ClockDivider500K File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/ClockDivider500K.v Line: 1
 Info (12127): Elaborating entity "Adam3201Project" for the top level hierarchy
 Warning (10034): Output port "GPIO[35..22]" at Adam3201Project.v(5) has no driver File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
 Warning (10034): Output port "GPIO[20]" at Adam3201Project.v(5) has no driver File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
@@ -559,17 +572,17 @@ Warning (10034): Output port "GPIO[16]" at Adam3201Project.v(5) has no driver Fi
 Warning (10034): Output port "GPIO[14]" at Adam3201Project.v(5) has no driver File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
 Warning (10034): Output port "GPIO[12]" at Adam3201Project.v(5) has no driver File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
 Warning (10034): Output port "GPIO[10..0]" at Adam3201Project.v(5) has no driver File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
-Info (12128): Elaborating entity "ClockDivider2K" for hierarchy "ClockDivider2K:cdiv2k" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 20
-Info (12128): Elaborating entity "seg7" for hierarchy "seg7:h0" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 26
-Info (12128): Elaborating entity "MotorPWM" for hierarchy "MotorPWM:motor1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 30
+Info (12128): Elaborating entity "ClockDivider500K" for hierarchy "ClockDivider500K:cdiv500k" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 22
+Info (12128): Elaborating entity "seg7" for hierarchy "seg7:h5" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 26
+Info (12128): Elaborating entity "MotorPWM" for hierarchy "MotorPWM:motor1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 36
 Info (278001): Inferred 5 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 28
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 28
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 27
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 27
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 26
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod2" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 28
-Info (12133): Instantiated megafunction "lpm_divide:Mod2" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 28
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 33
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 33
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 32
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 32
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 31
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod2" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 33
+Info (12133): Instantiated megafunction "lpm_divide:Mod2" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 33
     Info (12134): Parameter "LPM_WIDTHN" = "8"
     Info (12134): Parameter "LPM_WIDTHD" = "10"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -584,8 +597,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/add_
     Info (12023): Found entity 1: add_sub_t3c File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/add_sub_t3c.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
     Info (12023): Found entity 1: add_sub_u3c File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/add_sub_u3c.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 28
-Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 28
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 33
+Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 33
     Info (12134): Parameter "LPM_WIDTHN" = "10"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -596,8 +609,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_nlh File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/sign_div_unsign_nlh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ohe.tdf
     Info (12023): Found entity 1: alt_u_div_ohe File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_ohe.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 27
-Info (12133): Instantiated megafunction "lpm_divide:Mod1" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 27
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 32
+Info (12133): Instantiated megafunction "lpm_divide:Mod1" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 32
     Info (12134): Parameter "LPM_WIDTHN" = "8"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -608,8 +621,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_ekh File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/sign_div_unsign_ekh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_6fe.tdf
     Info (12023): Found entity 1: alt_u_div_6fe File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_6fe.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 27
-Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 27
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 32
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 32
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -620,8 +633,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_akh File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/sign_div_unsign_akh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_uee.tdf
     Info (12023): Found entity 1: alt_u_div_uee File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_uee.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 26
-Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 26
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 31
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 31
     Info (12134): Parameter "LPM_WIDTHN" = "8"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -632,7 +645,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_bkh File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/sign_div_unsign_bkh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_0fe.tdf
     Info (12023): Found entity 1: alt_u_div_0fe File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_0fe.tdf Line: 27
-Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "GPIO[0]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
     Warning (13410): Pin "GPIO[1]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
@@ -668,6 +681,10 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "GPIO[33]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
     Warning (13410): Pin "GPIO[34]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
     Warning (13410): Pin "GPIO[35]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 6
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 6
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 6
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 6
     Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 6
 Info (286030): Timing-Driven Synthesis is running
 Info (17016): Found the following redundant logic cells in design
@@ -751,14 +768,14 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 2
-Info (21057): Implemented 308 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 319 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
-    Info (21059): Implemented 67 output pins
-    Info (21061): Implemented 230 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 122 warnings
-    Info: Peak virtual memory: 4748 megabytes
-    Info: Processing ended: Mon Nov 09 10:02:49 2020
-    Info: Elapsed time: 00:00:28
-    Info: Total CPU time (on all processors): 00:00:45
+    Info (21059): Implemented 74 output pins
+    Info (21061): Implemented 234 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 126 warnings
+    Info: Peak virtual memory: 4752 megabytes
+    Info: Processing ended: Mon Nov 09 10:38:54 2020
+    Info: Elapsed time: 00:00:29
+    Info: Total CPU time (on all processors): 00:00:49
 
 

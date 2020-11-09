@@ -1,5 +1,5 @@
 |Adam3201Project
-SW[0] => enable.IN2
+SW[0] => enable.IN9
 SW[1] => ~NO_FANOUT~
 SW[2] => duty_cycle[0].IN2
 SW[3] => duty_cycle[1].IN2
@@ -56,6 +56,13 @@ GPIO[32] <= <GND>
 GPIO[33] <= <GND>
 GPIO[34] <= <GND>
 GPIO[35] <= <GND>
+HEX5[0] <= seg7:h5.port1
+HEX5[1] <= seg7:h5.port1
+HEX5[2] <= seg7:h5.port1
+HEX5[3] <= seg7:h5.port1
+HEX5[4] <= seg7:h5.port1
+HEX5[5] <= seg7:h5.port1
+HEX5[6] <= seg7:h5.port1
 HEX2[0] <= seg7:h2.port1
 HEX2[1] <= seg7:h2.port1
 HEX2[2] <= seg7:h2.port1
@@ -79,7 +86,7 @@ HEX0[5] <= seg7:h0.port1
 HEX0[6] <= seg7:h0.port1
 
 
-|Adam3201Project|ClockDivider2K:cdiv2k
+|Adam3201Project|ClockDivider500K:cdiv500k
 cin => counter[0].CLK
 cin => counter[1].CLK
 cin => counter[2].CLK
@@ -95,7 +102,77 @@ cin => counter[11].CLK
 cin => counter[12].CLK
 cin => counter[13].CLK
 cin => counter[14].CLK
+cin => counter[15].CLK
+cin => counter[16].CLK
+cin => counter[17].CLK
+cin => counter[18].CLK
 cout <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Adam3201Project|seg7:h5
+d[0] => segments.IN1
+d[0] => segments.IN0
+d[0] => segments.IN0
+d[0] => segments.IN0
+d[0] => segments.IN1
+d[0] => segments.IN1
+d[0] => segments.IN1
+d[0] => segments.IN0
+d[0] => segments.IN0
+d[0] => segments.IN1
+d[0] => segments.IN1
+d[0] => segments.IN0
+d[0] => segments.IN1
+d[0] => segments.IN1
+d[0] => segments.IN1
+d[0] => segments.IN1
+d[1] => segments.IN0
+d[1] => segments.IN1
+d[1] => segments.IN0
+d[1] => segments.IN0
+d[1] => segments.IN1
+d[1] => segments.IN1
+d[1] => segments.IN0
+d[1] => segments.IN0
+d[1] => segments.IN0
+d[1] => segments.IN1
+d[1] => segments.IN1
+d[1] => segments.IN0
+d[1] => segments.IN0
+d[1] => segments.IN1
+d[2] => segments.IN1
+d[2] => segments.IN1
+d[2] => segments.IN1
+d[2] => segments.IN1
+d[2] => segments.IN0
+d[2] => segments.IN1
+d[2] => segments.IN1
+d[2] => segments.IN0
+d[2] => segments.IN0
+d[2] => segments.IN1
+d[2] => segments.IN1
+d[2] => segments.IN1
+d[2] => segments.IN1
+d[3] => segments.IN1
+d[3] => segments.IN1
+d[3] => segments.IN1
+d[3] => segments.IN1
+d[3] => segments.IN1
+d[3] => segments.IN1
+d[3] => segments.IN1
+d[3] => segments.IN1
+d[3] => segments.IN1
+d[3] => segments.IN1
+d[3] => segments.IN1
+d[3] => segments.IN1
+d[3] => segments.IN1
+segments[0] <= segments.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= segments.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= segments.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= segments.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= segments.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= segments.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= segments.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Adam3201Project|seg7:h0
