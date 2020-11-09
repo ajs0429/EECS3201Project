@@ -1,0 +1,764 @@
+Analysis & Synthesis report for Adam3201Project
+Mon Nov 09 10:02:49 2020
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Parameter Settings for User Entity Instance: ClockDivider2K:cdiv2k
+ 11. Parameter Settings for User Entity Instance: MotorPWM:motor1
+ 12. Parameter Settings for User Entity Instance: MotorPWM:motor2
+ 13. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2
+ 14. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
+ 15. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
+ 16. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 17. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 18. Port Connectivity Checks: "MotorPWM:motor2"
+ 19. Port Connectivity Checks: "MotorPWM:motor1"
+ 20. Port Connectivity Checks: "seg7:h2"
+ 21. Port Connectivity Checks: "seg7:h1"
+ 22. Port Connectivity Checks: "seg7:h0"
+ 23. Post-Synthesis Netlist Statistics for Top Partition
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Nov 09 10:02:49 2020       ;
+; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                      ; Adam3201Project                             ;
+; Top-level Entity Name              ; Adam3201Project                             ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 229                                         ;
+;     Total combinational functions  ; 229                                         ;
+;     Dedicated logic registers      ; 24                                          ;
+; Total registers                    ; 24                                          ;
+; Total pins                         ; 78                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                            ; Adam3201Project    ; Adam3201Project    ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                 ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                             ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------+---------+
+; Adam3201Project.v                ; yes             ; User Verilog HDL File        ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v          ;         ;
+; MotorPWM.v                       ; yes             ; User Verilog HDL File        ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/MotorPWM.v                 ;         ;
+; ClockDivider2K.v                 ; yes             ; User Verilog HDL File        ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/ClockDivider2K.v           ;         ;
+; seg7.v                           ; yes             ; User Verilog HDL File        ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/seg7.v                     ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf                                    ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc                                   ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc                               ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                                    ;         ;
+; db/lpm_divide_pll.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/lpm_divide_pll.tdf      ;         ;
+; db/sign_div_unsign_1nh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/sign_div_unsign_1nh.tdf ;         ;
+; db/alt_u_div_cke.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_cke.tdf       ;         ;
+; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/add_sub_t3c.tdf         ;         ;
+; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/add_sub_u3c.tdf         ;         ;
+; db/lpm_divide_ltl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/lpm_divide_ltl.tdf      ;         ;
+; db/sign_div_unsign_nlh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/sign_div_unsign_nlh.tdf ;         ;
+; db/alt_u_div_ohe.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_ohe.tdf       ;         ;
+; db/lpm_divide_fkl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/lpm_divide_fkl.tdf      ;         ;
+; db/sign_div_unsign_ekh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/sign_div_unsign_ekh.tdf ;         ;
+; db/alt_u_div_6fe.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_6fe.tdf       ;         ;
+; db/lpm_divide_8sl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/lpm_divide_8sl.tdf      ;         ;
+; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/sign_div_unsign_akh.tdf ;         ;
+; db/alt_u_div_uee.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_uee.tdf       ;         ;
+; db/lpm_divide_ckl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/lpm_divide_ckl.tdf      ;         ;
+; db/sign_div_unsign_bkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/sign_div_unsign_bkh.tdf ;         ;
+; db/alt_u_div_0fe.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_0fe.tdf       ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                                                                              ;
++---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                                                                      ;
++---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+; Estimated Total logic elements              ; 229                                                                                                                        ;
+;                                             ;                                                                                                                            ;
+; Total combinational functions               ; 229                                                                                                                        ;
+; Logic element usage by number of LUT inputs ;                                                                                                                            ;
+;     -- 4 input functions                    ; 46                                                                                                                         ;
+;     -- 3 input functions                    ; 53                                                                                                                         ;
+;     -- <=2 input functions                  ; 130                                                                                                                        ;
+;                                             ;                                                                                                                            ;
+; Logic elements by mode                      ;                                                                                                                            ;
+;     -- normal mode                          ; 145                                                                                                                        ;
+;     -- arithmetic mode                      ; 84                                                                                                                         ;
+;                                             ;                                                                                                                            ;
+; Total registers                             ; 24                                                                                                                         ;
+;     -- Dedicated logic registers            ; 24                                                                                                                         ;
+;     -- I/O registers                        ; 0                                                                                                                          ;
+;                                             ;                                                                                                                            ;
+; I/O pins                                    ; 78                                                                                                                         ;
+;                                             ;                                                                                                                            ;
+; Embedded Multiplier 9-bit elements          ; 0                                                                                                                          ;
+;                                             ;                                                                                                                            ;
+; Maximum fan-out node                        ; lpm_divide:Mod1|lpm_divide_fkl:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_6fe:divider|add_sub_6_result_int[7]~10 ;
+; Maximum fan-out                             ; 18                                                                                                                         ;
+; Total fan-out                               ; 747                                                                                                                        ;
+; Average fan-out                             ; 1.82                                                                                                                       ;
++---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                 ;
++----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                              ; Entity Name         ; Library Name ;
++----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |Adam3201Project                       ; 229 (1)             ; 24 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 78   ; 0            ; 0          ; |Adam3201Project                                                                                                 ; Adam3201Project     ; work         ;
+;    |ClockDivider2K:cdiv2k|             ; 23 (23)             ; 15 (15)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|ClockDivider2K:cdiv2k                                                                           ; ClockDivider2K      ; work         ;
+;    |MotorPWM:motor1|                   ; 17 (17)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|MotorPWM:motor1                                                                                 ; MotorPWM            ; work         ;
+;    |lpm_divide:Div0|                   ; 46 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_8sl:auto_generated|  ; 46 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Div0|lpm_divide_8sl:auto_generated                                                   ; lpm_divide_8sl      ; work         ;
+;          |sign_div_unsign_akh:divider| ; 46 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Div0|lpm_divide_8sl:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
+;             |alt_u_div_uee:divider|    ; 46 (46)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Div0|lpm_divide_8sl:auto_generated|sign_div_unsign_akh:divider|alt_u_div_uee:divider ; alt_u_div_uee       ; work         ;
+;    |lpm_divide:Div1|                   ; 26 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_ltl:auto_generated|  ; 26 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Div1|lpm_divide_ltl:auto_generated                                                   ; lpm_divide_ltl      ; work         ;
+;          |sign_div_unsign_nlh:divider| ; 26 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Div1|lpm_divide_ltl:auto_generated|sign_div_unsign_nlh:divider                       ; sign_div_unsign_nlh ; work         ;
+;             |alt_u_div_ohe:divider|    ; 26 (26)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Div1|lpm_divide_ltl:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_ohe:divider ; alt_u_div_ohe       ; work         ;
+;    |lpm_divide:Mod0|                   ; 59 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_ckl:auto_generated|  ; 59 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod0|lpm_divide_ckl:auto_generated                                                   ; lpm_divide_ckl      ; work         ;
+;          |sign_div_unsign_bkh:divider| ; 59 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod0|lpm_divide_ckl:auto_generated|sign_div_unsign_bkh:divider                       ; sign_div_unsign_bkh ; work         ;
+;             |alt_u_div_0fe:divider|    ; 59 (59)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod0|lpm_divide_ckl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_0fe:divider ; alt_u_div_0fe       ; work         ;
+;    |lpm_divide:Mod1|                   ; 40 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_fkl:auto_generated|  ; 40 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod1|lpm_divide_fkl:auto_generated                                                   ; lpm_divide_fkl      ; work         ;
+;          |sign_div_unsign_ekh:divider| ; 40 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod1|lpm_divide_fkl:auto_generated|sign_div_unsign_ekh:divider                       ; sign_div_unsign_ekh ; work         ;
+;             |alt_u_div_6fe:divider|    ; 40 (40)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod1|lpm_divide_fkl:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_6fe:divider ; alt_u_div_6fe       ; work         ;
+;    |seg7:h0|                           ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|seg7:h0                                                                                         ; seg7                ; work         ;
+;    |seg7:h1|                           ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|seg7:h1                                                                                         ; seg7                ; work         ;
+;    |seg7:h2|                           ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|seg7:h2                                                                                         ; seg7                ; work         ;
++----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; MotorPWM:motor2|enable_pwm            ; Merged with MotorPWM:motor1|enable_pwm ;
+; MotorPWM:motor2|count[7]              ; Merged with MotorPWM:motor1|count[7]   ;
+; MotorPWM:motor2|count[6]              ; Merged with MotorPWM:motor1|count[6]   ;
+; MotorPWM:motor2|count[5]              ; Merged with MotorPWM:motor1|count[5]   ;
+; MotorPWM:motor2|count[4]              ; Merged with MotorPWM:motor1|count[4]   ;
+; MotorPWM:motor2|count[3]              ; Merged with MotorPWM:motor1|count[3]   ;
+; MotorPWM:motor2|count[2]              ; Merged with MotorPWM:motor1|count[2]   ;
+; MotorPWM:motor2|count[1]              ; Merged with MotorPWM:motor1|count[1]   ;
+; MotorPWM:motor2|count[0]              ; Merged with MotorPWM:motor1|count[0]   ;
+; Total Number of Removed Registers = 9 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 24    ;
+; Number of registers using Synchronous Clear  ; 15    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ClockDivider2K:cdiv2k ;
++----------------+-----------------+---------------------------------+
+; Parameter Name ; Value           ; Type                            ;
++----------------+-----------------+---------------------------------+
+; DIVISOR        ; 110000110101000 ; Unsigned Binary                 ;
++----------------+-----------------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MotorPWM:motor1 ;
++----------------+----------+----------------------------------+
+; Parameter Name ; Value    ; Type                             ;
++----------------+----------+----------------------------------+
+; LIMIT          ; 11111111 ; Unsigned Binary                  ;
++----------------+----------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MotorPWM:motor2 ;
++----------------+----------+----------------------------------+
+; Parameter Name ; Value    ; Type                             ;
++----------------+----------+----------------------------------+
+; LIMIT          ; 11111111 ; Unsigned Binary                  ;
++----------------+----------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                ;
+; LPM_WIDTHD             ; 10             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_pll ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                ;
+; LPM_WIDTHD             ; 7              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_ltl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                ;
+; LPM_WIDTHD             ; 7              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_fkl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_8sl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_ckl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "MotorPWM:motor2" ;
++------+-------+----------+-------------------+
+; Port ; Type  ; Severity ; Details           ;
++------+-------+----------+-------------------+
+; dir  ; Input ; Info     ; Stuck at VCC      ;
++------+-------+----------+-------------------+
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "MotorPWM:motor1" ;
++------+-------+----------+-------------------+
+; Port ; Type  ; Severity ; Details           ;
++------+-------+----------+-------------------+
+; dir  ; Input ; Info     ; Stuck at VCC      ;
++------+-------+----------+-------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "seg7:h2"                                                                                                                                                                          ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; d    ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "seg7:h1"                                                                                                                                                                          ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; d    ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "seg7:h0"                                                                                                                                                                          ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; d    ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 78                          ;
+; cycloneiii_ff         ; 24                          ;
+;     SCLR              ; 15                          ;
+;     plain             ; 9                           ;
+; cycloneiii_lcell_comb ; 233                         ;
+;     arith             ; 84                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 32                          ;
+;         3 data inputs ; 51                          ;
+;     normal            ; 149                         ;
+;         0 data inputs ; 15                          ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 81                          ;
+;         3 data inputs ; 2                           ;
+;         4 data inputs ; 46                          ;
+;                       ;                             ;
+; Max LUT depth         ; 14.60                       ;
+; Average LUT depth     ; 9.45                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:06     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Mon Nov 09 10:02:21 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Adam3201Project -c Adam3201Project
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file adam3201project.v
+    Info (12023): Found entity 1: Adam3201Project File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file motorpwm.v
+    Info (12023): Found entity 1: MotorPWM File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/MotorPWM.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file clockdivider2k.v
+    Info (12023): Found entity 1: ClockDivider2K File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/ClockDivider2K.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file seg7.v
+    Info (12023): Found entity 1: seg7 File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/seg7.v Line: 2
+Info (12127): Elaborating entity "Adam3201Project" for the top level hierarchy
+Warning (10034): Output port "GPIO[35..22]" at Adam3201Project.v(5) has no driver File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+Warning (10034): Output port "GPIO[20]" at Adam3201Project.v(5) has no driver File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+Warning (10034): Output port "GPIO[18]" at Adam3201Project.v(5) has no driver File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+Warning (10034): Output port "GPIO[16]" at Adam3201Project.v(5) has no driver File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+Warning (10034): Output port "GPIO[14]" at Adam3201Project.v(5) has no driver File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+Warning (10034): Output port "GPIO[12]" at Adam3201Project.v(5) has no driver File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+Warning (10034): Output port "GPIO[10..0]" at Adam3201Project.v(5) has no driver File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+Info (12128): Elaborating entity "ClockDivider2K" for hierarchy "ClockDivider2K:cdiv2k" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 20
+Info (12128): Elaborating entity "seg7" for hierarchy "seg7:h0" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 26
+Info (12128): Elaborating entity "MotorPWM" for hierarchy "MotorPWM:motor1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 30
+Info (278001): Inferred 5 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 28
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 28
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 27
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 27
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 26
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod2" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 28
+Info (12133): Instantiated megafunction "lpm_divide:Mod2" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 28
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "10"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_pll.tdf
+    Info (12023): Found entity 1: lpm_divide_pll File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/lpm_divide_pll.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_1nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_1nh File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/sign_div_unsign_1nh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_cke.tdf
+    Info (12023): Found entity 1: alt_u_div_cke File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_cke.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
+    Info (12023): Found entity 1: add_sub_t3c File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/add_sub_t3c.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
+    Info (12023): Found entity 1: add_sub_u3c File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/add_sub_u3c.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 28
+Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 28
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ltl.tdf
+    Info (12023): Found entity 1: lpm_divide_ltl File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/lpm_divide_ltl.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_nlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_nlh File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/sign_div_unsign_nlh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ohe.tdf
+    Info (12023): Found entity 1: alt_u_div_ohe File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_ohe.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 27
+Info (12133): Instantiated megafunction "lpm_divide:Mod1" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 27
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_fkl.tdf
+    Info (12023): Found entity 1: lpm_divide_fkl File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/lpm_divide_fkl.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_ekh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_ekh File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/sign_div_unsign_ekh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_6fe.tdf
+    Info (12023): Found entity 1: alt_u_div_6fe File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_6fe.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 27
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 27
+    Info (12134): Parameter "LPM_WIDTHN" = "7"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_8sl.tdf
+    Info (12023): Found entity 1: lpm_divide_8sl File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/lpm_divide_8sl.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_akh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_akh File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/sign_div_unsign_akh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_uee.tdf
+    Info (12023): Found entity 1: alt_u_div_uee File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_uee.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 26
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 26
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ckl.tdf
+    Info (12023): Found entity 1: lpm_divide_ckl File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/lpm_divide_ckl.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_bkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_bkh File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/sign_div_unsign_bkh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_0fe.tdf
+    Info (12023): Found entity 1: alt_u_div_0fe File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_0fe.tdf Line: 27
+Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "GPIO[0]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[1]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[2]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[3]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[4]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[5]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[6]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[7]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[8]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[9]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[10]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[12]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[13]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[14]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[15]" is stuck at VCC File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[16]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[17]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[18]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[19]" is stuck at VCC File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[20]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[22]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[23]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[24]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[25]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[26]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[27]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[28]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[29]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[30]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[31]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[32]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[33]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[34]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "GPIO[35]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 6
+Info (286030): Timing-Driven Synthesis is running
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "lpm_divide:Div1|lpm_divide_ltl:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_ohe:divider|add_sub_8_result_int[1]~14" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_ohe.tdf Line: 67
+Warning (20013): Ignored 24 assignments for entity "DE10_LITE_Default" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_PRESERVE_HIGH_SPEED_TILES ON -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IGNORE_SOURCE_FILE_CHANGES OFF -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ALWAYS_USE_QXP_NETLIST OFF -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_COLOR 16764057 -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS UPDATE_CONFLICTING -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ALLOW_MULTIPLE_PERSONAS OFF -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ASD_REGION_ID 1 -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name CROSS_BOUNDARY_OPTIMIZATIONS OFF -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_CONSTANTS_ON_INPUTS ON -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_INVERSIONS_ON_INPUTS ON -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS ON -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_INPUTS ON -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_BIDIRS ON -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity DE10_LITE_Default -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE10_LITE_Default -section_id Top was ignored
+Warning (20013): Ignored 24 assignments for entity "Lab2" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity Lab2 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity Lab2 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity Lab2 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_PRESERVE_HIGH_SPEED_TILES ON -entity Lab2 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IGNORE_SOURCE_FILE_CHANGES OFF -entity Lab2 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ALWAYS_USE_QXP_NETLIST OFF -entity Lab2 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_COLOR 16764057 -entity Lab2 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -entity Lab2 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -entity Lab2 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS UPDATE_CONFLICTING -entity Lab2 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -entity Lab2 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -entity Lab2 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -entity Lab2 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ALLOW_MULTIPLE_PERSONAS OFF -entity Lab2 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ASD_REGION_ID 1 -entity Lab2 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name CROSS_BOUNDARY_OPTIMIZATIONS OFF -entity Lab2 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_CONSTANTS_ON_INPUTS ON -entity Lab2 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_INVERSIONS_ON_INPUTS ON -entity Lab2 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS ON -entity Lab2 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_INPUTS ON -entity Lab2 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_BIDIRS ON -entity Lab2 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity Lab2 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity Lab2 -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity Lab2 -section_id Top was ignored
+Warning (20013): Ignored 24 assignments for entity "test" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_PRESERVE_HIGH_SPEED_TILES ON -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IGNORE_SOURCE_FILE_CHANGES OFF -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ALWAYS_USE_QXP_NETLIST OFF -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_COLOR 16764057 -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS UPDATE_CONFLICTING -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ALLOW_MULTIPLE_PERSONAS OFF -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ASD_REGION_ID 1 -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name CROSS_BOUNDARY_OPTIMIZATIONS OFF -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_CONSTANTS_ON_INPUTS ON -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_INVERSIONS_ON_INPUTS ON -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS ON -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_INPUTS ON -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_BIDIRS ON -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity test -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity test -section_id Top was ignored
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 2
+Info (21057): Implemented 308 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 67 output pins
+    Info (21061): Implemented 230 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 122 warnings
+    Info: Peak virtual memory: 4748 megabytes
+    Info: Processing ended: Mon Nov 09 10:02:49 2020
+    Info: Elapsed time: 00:00:28
+    Info: Total CPU time (on all processors): 00:00:45
+
+

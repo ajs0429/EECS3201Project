@@ -1,0 +1,23 @@
+module MotorPWM(
+	input cin,
+	input dir, // 1 for forward, 0 for backward
+	input enable,
+	input[7:0] duty_cycle,
+	output enable_pwm,
+	output out1,
+	output out2;
+);
+
+assign out1 = ~dir;
+assign out2 = dir;
+
+reg[25:0] count = 26'd0;
+
+always @(posedge cin)
+begin
+
+end
+
+assign cout = (count < D/2) ? 1'b0 : 1'b1;
+
+endmodule
