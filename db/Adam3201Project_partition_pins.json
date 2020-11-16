@@ -8,34 +8,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "LEDR[1]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[2]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[3]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[4]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[5]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[6]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[7]",
-					"strict" : false
-				},
-				{
 					"name" : "LEDR[8]",
 					"strict" : false
 				},
@@ -44,11 +16,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "GPIO[11]",
+					"name" : "G8",
 					"strict" : false
 				},
 				{
-					"name" : "GPIO[21]",
+					"name" : "G11",
+					"strict" : false
+				},
+				{
+					"name" : "G21",
 					"strict" : false
 				},
 				{
@@ -64,7 +40,35 @@
 					"strict" : false
 				},
 				{
+					"name" : "HEX4[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX4[6]",
+					"strict" : false
+				},
+				{
 					"name" : "HEX2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[1]",
 					"strict" : false
 				},
 				{
@@ -144,27 +148,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[2]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[3]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[4]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[5]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[6]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[7]",
+					"name" : "SW[0]",
 					"strict" : false
 				},
 				{
@@ -176,11 +160,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[0]",
+					"name" : "MAX10_CLK1_50",
 					"strict" : false
 				},
 				{
-					"name" : "MAX10_CLK1_50",
+					"name" : "G9",
 					"strict" : false
 				}
 			]

@@ -3,63 +3,63 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'MAX10_CLK1_50'
-Slack : -5.666
-TNS   : -105.151
+Slack : -76.601
+TNS   : -1592.014
 
 Type  : Slow 1200mV 85C Model Setup 'ClockDivider500K:cdiv500k|counter[10]'
-Slack : -1.406
-TNS   : -8.430
-
-Type  : Slow 1200mV 85C Model Hold 'ClockDivider500K:cdiv500k|counter[10]'
-Slack : 0.362
-TNS   : 0.000
+Slack : -1.147
+TNS   : -6.629
 
 Type  : Slow 1200mV 85C Model Hold 'MAX10_CLK1_50'
-Slack : 0.665
+Slack : 0.343
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'ClockDivider500K:cdiv500k|counter[10]'
+Slack : 0.363
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'MAX10_CLK1_50'
 Slack : -3.000
-TNS   : -29.657
+TNS   : -172.763
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ClockDivider500K:cdiv500k|counter[10]'
 Slack : -1.403
-TNS   : -12.627
+TNS   : -14.030
 
 Type  : Slow 1200mV 0C Model Setup 'MAX10_CLK1_50'
-Slack : -5.128
-TNS   : -95.259
+Slack : -69.568
+TNS   : -1442.138
 
 Type  : Slow 1200mV 0C Model Setup 'ClockDivider500K:cdiv500k|counter[10]'
-Slack : -1.188
-TNS   : -6.875
+Slack : -0.943
+TNS   : -5.223
+
+Type  : Slow 1200mV 0C Model Hold 'MAX10_CLK1_50'
+Slack : 0.307
+TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'ClockDivider500K:cdiv500k|counter[10]'
 Slack : 0.328
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'MAX10_CLK1_50'
-Slack : 0.617
-TNS   : 0.000
-
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'MAX10_CLK1_50'
 Slack : -3.000
-TNS   : -29.657
+TNS   : -172.763
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ClockDivider500K:cdiv500k|counter[10]'
 Slack : -1.403
-TNS   : -12.627
+TNS   : -14.030
 
 Type  : Fast 1200mV 0C Model Setup 'MAX10_CLK1_50'
-Slack : -1.935
-TNS   : -35.059
+Slack : -30.306
+TNS   : -586.583
 
 Type  : Fast 1200mV 0C Model Setup 'ClockDivider500K:cdiv500k|counter[10]'
-Slack : 0.061
+Slack : 0.147
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'MAX10_CLK1_50'
-Slack : 0.040
+Slack : 0.073
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'ClockDivider500K:cdiv500k|counter[10]'
@@ -68,10 +68,10 @@ TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'MAX10_CLK1_50'
 Slack : -3.000
-TNS   : -23.230
+TNS   : -128.449
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ClockDivider500K:cdiv500k|counter[10]'
 Slack : -1.000
-TNS   : -9.000
+TNS   : -10.000
 
 ------------------------------------------------------------

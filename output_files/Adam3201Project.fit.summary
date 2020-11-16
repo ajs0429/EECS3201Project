@@ -1,15 +1,15 @@
-Fitter Status : Successful - Mon Nov 09 10:39:26 2020
+Fitter Status : Successful - Sun Nov 15 22:03:06 2020
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : Adam3201Project
 Top-level Entity Name : Adam3201Project
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 234 / 49,760 ( < 1 % )
-    Total combinational functions : 234 / 49,760 ( < 1 % )
-    Dedicated logic registers : 28 / 49,760 ( < 1 % )
-Total registers : 28
-Total pins : 85 / 360 ( 24 % )
+Total logic elements : 2,217 / 49,760 ( 4 % )
+    Total combinational functions : 2,212 / 49,760 ( 4 % )
+    Dedicated logic registers : 131 / 49,760 ( < 1 % )
+Total registers : 131
+Total pins : 64 / 360 ( 18 % )
 Total virtual pins : 0
 Total memory bits : 0 / 1,677,312 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )

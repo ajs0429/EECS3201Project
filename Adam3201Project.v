@@ -2,8 +2,9 @@ module Adam3201Project(
     input [9:0] SW,
 	 input MAX10_CLK1_50,
     output [9:0] LEDR,
-	 output [35:0] GPIO,
-	 output [6:0] HEX5, HEX2, HEX1, HEX0
+	 input G9,
+	 output G8, G11, G13, G15, G17, G19, G21,
+	 output [6:0] HEX5, HEX4, HEX2, HEX1, HEX0
 );
 /*
 Pins:
@@ -15,7 +16,12 @@ Pins:
 19 - OUT4
 21 - EN2
 
+9 - Echo
+8 - Trig
+
 */
+
+assign LEDR[7:1] = 7'b0;
 
 // Construct 500 kHz clock (gives a very close to 2 kHz PWM cycle)
 wire Clock500K;
@@ -23,20 +29,23 @@ ClockDivider500K cdiv500k(MAX10_CLK1_50, Clock500K);
 
 // Enables the motor controller
 wire enable = SW[0];
-seg7 h5(enable ? 8'b1111_1110 : 8'b0, HEX5);
+assign LEDR[0] = enable;
+seg7 h5(enable ? 4'he : 4'h0, HEX5);
 
-// Adjusts duty cycle (255 = always on, 0 = always off, 127 = 50% on)
-wire[7:0] duty_cycle = SW[9:2];
-assign LEDR[9:2] = duty_cycle;
-seg7 h0(duty_cycle % 10, HEX0);
-seg7 h1((duty_cycle % 100) / 10, HEX1);
-seg7 h2((duty_cycle % 1000) / 100, HEX2);
+// Adjusts duty cycle to 4 levels - 255 (100%), 191 (75%), 127 (50%), 63 (25%). Has problems starting in levels 1 and 2.
+assign LEDR[9:8] = SW[9:8];
+wire[1:0] switch_pos = SW[9:8] + 1;
+wire[7:0] duty_cycle = (switch_pos << 6) - 8'd1;
+seg7 h4(SW[9:8] + 4'd1, HEX4);
 
 // PWM drivers
-MotorPWM motor1(Clock500K, 1'b1, enable, duty_cycle, GPIO[11], GPIO[13], GPIO[15]);
-MotorPWM motor2(Clock500K, 1'b1, enable, duty_cycle, GPIO[21], GPIO[17], GPIO[19]);
+MotorPWM motor1(Clock500K, 1'b1, enable, duty_cycle, G11, G13, G15);
+MotorPWM motor2(Clock500K, 1'b1, enable, duty_cycle, G21, G17, G19);
 
-// LEDs representing PWM output (for debug)
-assign LEDR[1] = GPIO[11];
-assign LEDR[0] = GPIO[21];
+// Ultrasonic sensors
+wire [32:0] distance;
+sonic sonic1(MAX10_CLK1_50, G8, G9, distance);
+seg7 h0(distance % 10, HEX0);
+seg7 h1((distance % 100) / 10, HEX1);
+seg7 h2((distance % 1000) / 100, HEX2);
 endmodule
