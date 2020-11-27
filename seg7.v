@@ -1,4 +1,4 @@
-// code previously from lab 2
+// code previously from Adam Silverman's lab 2
 module seg7(
     input [3:0] d,
     output [6:0] segments

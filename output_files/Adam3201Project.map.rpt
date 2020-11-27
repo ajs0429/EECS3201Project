@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Adam3201Project
-Sun Nov 15 22:02:23 2020
+Thu Nov 26 22:22:55 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -13,26 +13,43 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: ClockDivider500K:cdiv500k
- 12. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2
- 13. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
- 14. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
- 15. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
- 16. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
- 17. Parameter Settings for Inferred Entity Instance: sonic:sonic1|lpm_divide:Div0
- 18. Port Connectivity Checks: "seg7:h2"
- 19. Port Connectivity Checks: "seg7:h1"
- 20. Port Connectivity Checks: "seg7:h0"
- 21. Port Connectivity Checks: "MotorPWM:motor2"
- 22. Port Connectivity Checks: "MotorPWM:motor1"
- 23. Port Connectivity Checks: "seg7:h4"
- 24. Port Connectivity Checks: "seg7:h5"
- 25. Post-Synthesis Netlist Statistics for Top Partition
- 26. Elapsed Time Per Partition
- 27. Analysis & Synthesis Messages
+  8. Analysis & Synthesis IP Cores Summary
+  9. Registers Protected by Synthesis
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for vga_controller:vga_ins
+ 14. Parameter Settings for User Entity Instance: ClockDivider500K:cdiv500k
+ 15. Parameter Settings for User Entity Instance: vga_pll:u1|altpll:altpll_component
+ 16. Parameter Settings for User Entity Instance: vga_controller:vga_ins
+ 17. Parameter Settings for User Entity Instance: vga_controller:vga_ins|video_sync_generator:LTM_ins
+ 18. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2
+ 19. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
+ 20. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
+ 21. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 22. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 23. Parameter Settings for Inferred Entity Instance: sonic:sonic1|lpm_divide:Div0
+ 24. Parameter Settings for Inferred Entity Instance: vga_controller:vga_ins|lpm_divide:Mod2
+ 25. Parameter Settings for Inferred Entity Instance: vga_controller:vga_ins|lpm_divide:Div1
+ 26. Parameter Settings for Inferred Entity Instance: vga_controller:vga_ins|lpm_divide:Mod1
+ 27. Parameter Settings for Inferred Entity Instance: vga_controller:vga_ins|lpm_divide:Div0
+ 28. Parameter Settings for Inferred Entity Instance: vga_controller:vga_ins|lpm_divide:Mod0
+ 29. altpll Parameter Settings by Entity Instance
+ 30. Port Connectivity Checks: "vga_controller:vga_ins|seg7:s2"
+ 31. Port Connectivity Checks: "vga_controller:vga_ins|seg7:s1"
+ 32. Port Connectivity Checks: "vga_controller:vga_ins|seg7:s0"
+ 33. Port Connectivity Checks: "vga_controller:vga_ins"
+ 34. Port Connectivity Checks: "vga_pll:u1"
+ 35. Port Connectivity Checks: "seg7:h2"
+ 36. Port Connectivity Checks: "seg7:h1"
+ 37. Port Connectivity Checks: "seg7:h0"
+ 38. Port Connectivity Checks: "MotorPWM:motor2"
+ 39. Port Connectivity Checks: "MotorPWM:motor1"
+ 40. Port Connectivity Checks: "seg7:h4"
+ 41. Port Connectivity Checks: "seg7:h5"
+ 42. Post-Synthesis Netlist Statistics for Top Partition
+ 43. Elapsed Time Per Partition
+ 44. Analysis & Synthesis Messages
 
 
 
@@ -59,20 +76,20 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Nov 15 22:02:23 2020       ;
+; Analysis & Synthesis Status        ; Successful - Thu Nov 26 22:22:55 2020       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; Adam3201Project                             ;
 ; Top-level Entity Name              ; Adam3201Project                             ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 2,212                                       ;
-;     Total combinational functions  ; 2,211                                       ;
-;     Dedicated logic registers      ; 131                                         ;
-; Total registers                    ; 131                                         ;
-; Total pins                         ; 64                                          ;
+; Total logic elements               ; 3,875                                       ;
+;     Total combinational functions  ; 3,860                                       ;
+;     Dedicated logic registers      ; 190                                         ;
+; Total registers                    ; 190                                         ;
+; Total pins                         ; 80                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
+; Total PLLs                         ; 1                                           ;
 ; UFM blocks                         ; 0                                           ;
 ; ADC blocks                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
@@ -186,15 +203,23 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                             ; Library ;
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------+---------+
+; v/video_sync_generator.v         ; yes             ; User Verilog HDL File        ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/v/video_sync_generator.v   ;         ;
+; v/vga_pll.v                      ; yes             ; User Verilog HDL File        ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/v/vga_pll.v                ;         ;
+; v/vga_controller.v               ; yes             ; User Verilog HDL File        ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/v/vga_controller.v         ;         ;
 ; Adam3201Project.v                ; yes             ; User Verilog HDL File        ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v          ;         ;
 ; MotorPWM.v                       ; yes             ; User Verilog HDL File        ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/MotorPWM.v                 ;         ;
 ; seg7.v                           ; yes             ; User Verilog HDL File        ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/seg7.v                     ;         ;
 ; ClockDivider500K.v               ; yes             ; User Verilog HDL File        ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/ClockDivider500K.v         ;         ;
 ; sonic.v                          ; yes             ; User Verilog HDL File        ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/sonic.v                    ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf                                        ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                                    ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_pll.inc                                   ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratixii_pll.inc                                 ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/cycloneii_pll.inc                                 ;         ;
+; db/vga_pll_altpll.v              ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/vga_pll_altpll.v        ;         ;
 ; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf                                    ;         ;
 ; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc                                   ;         ;
 ; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc                               ;         ;
-; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                                    ;         ;
 ; db/lpm_divide_7nl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/lpm_divide_7nl.tdf      ;         ;
 ; db/sign_div_unsign_6nh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/sign_div_unsign_6nh.tdf ;         ;
 ; db/alt_u_div_mke.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_mke.tdf       ;         ;
@@ -215,6 +240,15 @@ https://fpgasoftware.intel.com/eula.
 ; db/lpm_divide_ptl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/lpm_divide_ptl.tdf      ;         ;
 ; db/sign_div_unsign_rlh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/sign_div_unsign_rlh.tdf ;         ;
 ; db/alt_u_div_0ie.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_0ie.tdf       ;         ;
+; db/lpm_divide_6nl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/lpm_divide_6nl.tdf      ;         ;
+; db/sign_div_unsign_5nh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/sign_div_unsign_5nh.tdf ;         ;
+; db/alt_u_div_kke.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_kke.tdf       ;         ;
+; db/lpm_divide_sll.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/lpm_divide_sll.tdf      ;         ;
+; db/sign_div_unsign_tlh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/sign_div_unsign_tlh.tdf ;         ;
+; db/alt_u_div_1ie.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_1ie.tdf       ;         ;
+; db/lpm_divide_rll.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/lpm_divide_rll.tdf      ;         ;
+; db/sign_div_unsign_olh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/sign_div_unsign_olh.tdf ;         ;
+; db/alt_u_div_qhe.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_qhe.tdf       ;         ;
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -223,73 +257,141 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+---------------------+
 ; Resource                                    ; Usage               ;
 +---------------------------------------------+---------------------+
-; Estimated Total logic elements              ; 2,212               ;
+; Estimated Total logic elements              ; 3,875               ;
 ;                                             ;                     ;
-; Total combinational functions               ; 2211                ;
+; Total combinational functions               ; 3860                ;
 ; Logic element usage by number of LUT inputs ;                     ;
-;     -- 4 input functions                    ; 485                 ;
-;     -- 3 input functions                    ; 589                 ;
-;     -- <=2 input functions                  ; 1137                ;
+;     -- 4 input functions                    ; 923                 ;
+;     -- 3 input functions                    ; 1037                ;
+;     -- <=2 input functions                  ; 1900                ;
 ;                                             ;                     ;
 ; Logic elements by mode                      ;                     ;
-;     -- normal mode                          ; 1527                ;
-;     -- arithmetic mode                      ; 684                 ;
+;     -- normal mode                          ; 2710                ;
+;     -- arithmetic mode                      ; 1150                ;
 ;                                             ;                     ;
-; Total registers                             ; 131                 ;
-;     -- Dedicated logic registers            ; 131                 ;
+; Total registers                             ; 190                 ;
+;     -- Dedicated logic registers            ; 190                 ;
 ;     -- I/O registers                        ; 0                   ;
 ;                                             ;                     ;
-; I/O pins                                    ; 64                  ;
+; I/O pins                                    ; 80                  ;
 ;                                             ;                     ;
 ; Embedded Multiplier 9-bit elements          ; 0                   ;
 ;                                             ;                     ;
+; Total PLLs                                  ; 1                   ;
+;     -- PLLs                                 ; 1                   ;
+;                                             ;                     ;
 ; Maximum fan-out node                        ; MAX10_CLK1_50~input ;
-; Maximum fan-out                             ; 121                 ;
-; Total fan-out                               ; 6217                ;
-; Average fan-out                             ; 2.51                ;
+; Maximum fan-out                             ; 122                 ;
+; Total fan-out                               ; 10886               ;
+; Average fan-out                             ; 2.58                ;
 +---------------------------------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                 ;
-+-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                           ; Entity Name         ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |Adam3201Project                          ; 2211 (1)            ; 131 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 64   ; 0            ; 0          ; |Adam3201Project                                                                                                              ; Adam3201Project     ; work         ;
-;    |ClockDivider500K:cdiv500k|            ; 27 (27)             ; 19 (19)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|ClockDivider500K:cdiv500k                                                                                    ; ClockDivider500K    ; work         ;
-;    |MotorPWM:motor1|                      ; 10 (10)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|MotorPWM:motor1                                                                                              ; MotorPWM            ; work         ;
-;    |MotorPWM:motor2|                      ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|MotorPWM:motor2                                                                                              ; MotorPWM            ; work         ;
-;    |lpm_divide:Div0|                      ; 46 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Div0                                                                                              ; lpm_divide          ; work         ;
-;       |lpm_divide_8sl:auto_generated|     ; 46 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Div0|lpm_divide_8sl:auto_generated                                                                ; lpm_divide_8sl      ; work         ;
-;          |sign_div_unsign_akh:divider|    ; 46 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Div0|lpm_divide_8sl:auto_generated|sign_div_unsign_akh:divider                                    ; sign_div_unsign_akh ; work         ;
-;             |alt_u_div_uee:divider|       ; 46 (46)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Div0|lpm_divide_8sl:auto_generated|sign_div_unsign_akh:divider|alt_u_div_uee:divider              ; alt_u_div_uee       ; work         ;
-;    |lpm_divide:Div1|                      ; 72 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Div1                                                                                              ; lpm_divide          ; work         ;
-;       |lpm_divide_ltl:auto_generated|     ; 72 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Div1|lpm_divide_ltl:auto_generated                                                                ; lpm_divide_ltl      ; work         ;
-;          |sign_div_unsign_nlh:divider|    ; 72 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Div1|lpm_divide_ltl:auto_generated|sign_div_unsign_nlh:divider                                    ; sign_div_unsign_nlh ; work         ;
-;             |alt_u_div_ohe:divider|       ; 72 (72)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Div1|lpm_divide_ltl:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_ohe:divider              ; alt_u_div_ohe       ; work         ;
-;    |lpm_divide:Mod0|                      ; 320 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod0                                                                                              ; lpm_divide          ; work         ;
-;       |lpm_divide_qll:auto_generated|     ; 320 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod0|lpm_divide_qll:auto_generated                                                                ; lpm_divide_qll      ; work         ;
-;          |sign_div_unsign_plh:divider|    ; 320 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod0|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider                                    ; sign_div_unsign_plh ; work         ;
-;             |alt_u_div_she:divider|       ; 320 (320)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod0|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider              ; alt_u_div_she       ; work         ;
-;    |lpm_divide:Mod1|                      ; 481 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod1                                                                                              ; lpm_divide          ; work         ;
-;       |lpm_divide_tll:auto_generated|     ; 481 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod1|lpm_divide_tll:auto_generated                                                                ; lpm_divide_tll      ; work         ;
-;          |sign_div_unsign_slh:divider|    ; 481 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod1|lpm_divide_tll:auto_generated|sign_div_unsign_slh:divider                                    ; sign_div_unsign_slh ; work         ;
-;             |alt_u_div_2ie:divider|       ; 481 (481)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod1|lpm_divide_tll:auto_generated|sign_div_unsign_slh:divider|alt_u_div_2ie:divider              ; alt_u_div_2ie       ; work         ;
-;    |lpm_divide:Mod2|                      ; 580 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod2                                                                                              ; lpm_divide          ; work         ;
-;       |lpm_divide_7nl:auto_generated|     ; 580 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod2|lpm_divide_7nl:auto_generated                                                                ; lpm_divide_7nl      ; work         ;
-;          |sign_div_unsign_6nh:divider|    ; 580 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod2|lpm_divide_7nl:auto_generated|sign_div_unsign_6nh:divider                                    ; sign_div_unsign_6nh ; work         ;
-;             |alt_u_div_mke:divider|       ; 580 (580)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod2|lpm_divide_7nl:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_mke:divider              ; alt_u_div_mke       ; work         ;
-;    |seg7:h0|                              ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|seg7:h0                                                                                                      ; seg7                ; work         ;
-;    |seg7:h1|                              ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|seg7:h1                                                                                                      ; seg7                ; work         ;
-;    |seg7:h2|                              ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|seg7:h2                                                                                                      ; seg7                ; work         ;
-;    |seg7:h4|                              ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|seg7:h4                                                                                                      ; seg7                ; work         ;
-;    |sonic:sonic1|                         ; 649 (137)           ; 102 (102)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|sonic:sonic1                                                                                                 ; sonic               ; work         ;
-;       |lpm_divide:Div0|                   ; 512 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|sonic:sonic1|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_ptl:auto_generated|  ; 512 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|sonic:sonic1|lpm_divide:Div0|lpm_divide_ptl:auto_generated                                                   ; lpm_divide_ptl      ; work         ;
-;             |sign_div_unsign_rlh:divider| ; 512 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|sonic:sonic1|lpm_divide:Div0|lpm_divide_ptl:auto_generated|sign_div_unsign_rlh:divider                       ; sign_div_unsign_rlh ; work         ;
-;                |alt_u_div_0ie:divider|    ; 512 (512)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|sonic:sonic1|lpm_divide:Div0|lpm_divide_ptl:auto_generated|sign_div_unsign_rlh:divider|alt_u_div_0ie:divider ; alt_u_div_0ie       ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                            ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                     ; Entity Name          ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
+; |Adam3201Project                          ; 3860 (1)            ; 190 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 80   ; 0            ; 0          ; |Adam3201Project                                                                                                                        ; Adam3201Project      ; work         ;
+;    |ClockDivider500K:cdiv500k|            ; 27 (27)             ; 19 (19)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|ClockDivider500K:cdiv500k                                                                                              ; ClockDivider500K     ; work         ;
+;    |MotorPWM:motor1|                      ; 10 (10)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|MotorPWM:motor1                                                                                                        ; MotorPWM             ; work         ;
+;    |MotorPWM:motor2|                      ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|MotorPWM:motor2                                                                                                        ; MotorPWM             ; work         ;
+;    |lpm_divide:Div0|                      ; 46 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Div0                                                                                                        ; lpm_divide           ; work         ;
+;       |lpm_divide_8sl:auto_generated|     ; 46 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Div0|lpm_divide_8sl:auto_generated                                                                          ; lpm_divide_8sl       ; work         ;
+;          |sign_div_unsign_akh:divider|    ; 46 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Div0|lpm_divide_8sl:auto_generated|sign_div_unsign_akh:divider                                              ; sign_div_unsign_akh  ; work         ;
+;             |alt_u_div_uee:divider|       ; 46 (46)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Div0|lpm_divide_8sl:auto_generated|sign_div_unsign_akh:divider|alt_u_div_uee:divider                        ; alt_u_div_uee        ; work         ;
+;    |lpm_divide:Div1|                      ; 72 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Div1                                                                                                        ; lpm_divide           ; work         ;
+;       |lpm_divide_ltl:auto_generated|     ; 72 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Div1|lpm_divide_ltl:auto_generated                                                                          ; lpm_divide_ltl       ; work         ;
+;          |sign_div_unsign_nlh:divider|    ; 72 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Div1|lpm_divide_ltl:auto_generated|sign_div_unsign_nlh:divider                                              ; sign_div_unsign_nlh  ; work         ;
+;             |alt_u_div_ohe:divider|       ; 72 (72)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Div1|lpm_divide_ltl:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_ohe:divider                        ; alt_u_div_ohe        ; work         ;
+;    |lpm_divide:Mod0|                      ; 320 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod0                                                                                                        ; lpm_divide           ; work         ;
+;       |lpm_divide_qll:auto_generated|     ; 320 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod0|lpm_divide_qll:auto_generated                                                                          ; lpm_divide_qll       ; work         ;
+;          |sign_div_unsign_plh:divider|    ; 320 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod0|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider                                              ; sign_div_unsign_plh  ; work         ;
+;             |alt_u_div_she:divider|       ; 320 (320)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod0|lpm_divide_qll:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider                        ; alt_u_div_she        ; work         ;
+;    |lpm_divide:Mod1|                      ; 481 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod1                                                                                                        ; lpm_divide           ; work         ;
+;       |lpm_divide_tll:auto_generated|     ; 481 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod1|lpm_divide_tll:auto_generated                                                                          ; lpm_divide_tll       ; work         ;
+;          |sign_div_unsign_slh:divider|    ; 481 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod1|lpm_divide_tll:auto_generated|sign_div_unsign_slh:divider                                              ; sign_div_unsign_slh  ; work         ;
+;             |alt_u_div_2ie:divider|       ; 481 (481)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod1|lpm_divide_tll:auto_generated|sign_div_unsign_slh:divider|alt_u_div_2ie:divider                        ; alt_u_div_2ie        ; work         ;
+;    |lpm_divide:Mod2|                      ; 580 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod2                                                                                                        ; lpm_divide           ; work         ;
+;       |lpm_divide_7nl:auto_generated|     ; 580 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod2|lpm_divide_7nl:auto_generated                                                                          ; lpm_divide_7nl       ; work         ;
+;          |sign_div_unsign_6nh:divider|    ; 580 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod2|lpm_divide_7nl:auto_generated|sign_div_unsign_6nh:divider                                              ; sign_div_unsign_6nh  ; work         ;
+;             |alt_u_div_mke:divider|       ; 580 (580)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|lpm_divide:Mod2|lpm_divide_7nl:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_mke:divider                        ; alt_u_div_mke        ; work         ;
+;    |seg7:h0|                              ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|seg7:h0                                                                                                                ; seg7                 ; work         ;
+;    |seg7:h1|                              ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|seg7:h1                                                                                                                ; seg7                 ; work         ;
+;    |seg7:h2|                              ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|seg7:h2                                                                                                                ; seg7                 ; work         ;
+;    |seg7:h4|                              ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|seg7:h4                                                                                                                ; seg7                 ; work         ;
+;    |sonic:sonic1|                         ; 649 (137)           ; 102 (102)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|sonic:sonic1                                                                                                           ; sonic                ; work         ;
+;       |lpm_divide:Div0|                   ; 512 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|sonic:sonic1|lpm_divide:Div0                                                                                           ; lpm_divide           ; work         ;
+;          |lpm_divide_ptl:auto_generated|  ; 512 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|sonic:sonic1|lpm_divide:Div0|lpm_divide_ptl:auto_generated                                                             ; lpm_divide_ptl       ; work         ;
+;             |sign_div_unsign_rlh:divider| ; 512 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|sonic:sonic1|lpm_divide:Div0|lpm_divide_ptl:auto_generated|sign_div_unsign_rlh:divider                                 ; sign_div_unsign_rlh  ; work         ;
+;                |alt_u_div_0ie:divider|    ; 512 (512)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|sonic:sonic1|lpm_divide:Div0|lpm_divide_ptl:auto_generated|sign_div_unsign_rlh:divider|alt_u_div_0ie:divider           ; alt_u_div_0ie        ; work         ;
+;    |vga_controller:vga_ins|               ; 1649 (142)          ; 59 (35)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_controller:vga_ins                                                                                                 ; vga_controller       ; work         ;
+;       |lpm_divide:Div0|                   ; 46 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_controller:vga_ins|lpm_divide:Div0                                                                                 ; lpm_divide           ; work         ;
+;          |lpm_divide_8sl:auto_generated|  ; 46 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_controller:vga_ins|lpm_divide:Div0|lpm_divide_8sl:auto_generated                                                   ; lpm_divide_8sl       ; work         ;
+;             |sign_div_unsign_akh:divider| ; 46 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_controller:vga_ins|lpm_divide:Div0|lpm_divide_8sl:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh  ; work         ;
+;                |alt_u_div_uee:divider|    ; 46 (46)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_controller:vga_ins|lpm_divide:Div0|lpm_divide_8sl:auto_generated|sign_div_unsign_akh:divider|alt_u_div_uee:divider ; alt_u_div_uee        ; work         ;
+;       |lpm_divide:Div1|                   ; 67 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_controller:vga_ins|lpm_divide:Div1                                                                                 ; lpm_divide           ; work         ;
+;          |lpm_divide_ltl:auto_generated|  ; 67 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_controller:vga_ins|lpm_divide:Div1|lpm_divide_ltl:auto_generated                                                   ; lpm_divide_ltl       ; work         ;
+;             |sign_div_unsign_nlh:divider| ; 67 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_controller:vga_ins|lpm_divide:Div1|lpm_divide_ltl:auto_generated|sign_div_unsign_nlh:divider                       ; sign_div_unsign_nlh  ; work         ;
+;                |alt_u_div_ohe:divider|    ; 67 (67)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_controller:vga_ins|lpm_divide:Div1|lpm_divide_ltl:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_ohe:divider ; alt_u_div_ohe        ; work         ;
+;       |lpm_divide:Mod0|                   ; 320 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_controller:vga_ins|lpm_divide:Mod0                                                                                 ; lpm_divide           ; work         ;
+;          |lpm_divide_rll:auto_generated|  ; 320 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_controller:vga_ins|lpm_divide:Mod0|lpm_divide_rll:auto_generated                                                   ; lpm_divide_rll       ; work         ;
+;             |sign_div_unsign_olh:divider| ; 320 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_controller:vga_ins|lpm_divide:Mod0|lpm_divide_rll:auto_generated|sign_div_unsign_olh:divider                       ; sign_div_unsign_olh  ; work         ;
+;                |alt_u_div_qhe:divider|    ; 320 (320)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_controller:vga_ins|lpm_divide:Mod0|lpm_divide_rll:auto_generated|sign_div_unsign_olh:divider|alt_u_div_qhe:divider ; alt_u_div_qhe        ; work         ;
+;       |lpm_divide:Mod1|                   ; 481 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_controller:vga_ins|lpm_divide:Mod1                                                                                 ; lpm_divide           ; work         ;
+;          |lpm_divide_sll:auto_generated|  ; 481 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_controller:vga_ins|lpm_divide:Mod1|lpm_divide_sll:auto_generated                                                   ; lpm_divide_sll       ; work         ;
+;             |sign_div_unsign_tlh:divider| ; 481 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_controller:vga_ins|lpm_divide:Mod1|lpm_divide_sll:auto_generated|sign_div_unsign_tlh:divider                       ; sign_div_unsign_tlh  ; work         ;
+;                |alt_u_div_1ie:divider|    ; 481 (481)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_controller:vga_ins|lpm_divide:Mod1|lpm_divide_sll:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_1ie:divider ; alt_u_div_1ie        ; work         ;
+;       |lpm_divide:Mod2|                   ; 528 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_controller:vga_ins|lpm_divide:Mod2                                                                                 ; lpm_divide           ; work         ;
+;          |lpm_divide_6nl:auto_generated|  ; 528 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_controller:vga_ins|lpm_divide:Mod2|lpm_divide_6nl:auto_generated                                                   ; lpm_divide_6nl       ; work         ;
+;             |sign_div_unsign_5nh:divider| ; 528 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_controller:vga_ins|lpm_divide:Mod2|lpm_divide_6nl:auto_generated|sign_div_unsign_5nh:divider                       ; sign_div_unsign_5nh  ; work         ;
+;                |alt_u_div_kke:divider|    ; 528 (528)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_controller:vga_ins|lpm_divide:Mod2|lpm_divide_6nl:auto_generated|sign_div_unsign_5nh:divider|alt_u_div_kke:divider ; alt_u_div_kke        ; work         ;
+;       |seg7:s0|                           ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_controller:vga_ins|seg7:s0                                                                                         ; seg7                 ; work         ;
+;       |seg7:s1|                           ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_controller:vga_ins|seg7:s1                                                                                         ; seg7                 ; work         ;
+;       |seg7:s2|                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_controller:vga_ins|seg7:s2                                                                                         ; seg7                 ; work         ;
+;       |video_sync_generator:LTM_ins|      ; 60 (60)             ; 24 (24)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_controller:vga_ins|video_sync_generator:LTM_ins                                                                    ; video_sync_generator ; work         ;
+;    |vga_pll:u1|                           ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_pll:u1                                                                                                             ; vga_pll              ; work         ;
+;       |altpll:altpll_component|           ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_pll:u1|altpll:altpll_component                                                                                     ; altpll               ; work         ;
+;          |vga_pll_altpll:auto_generated|  ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|vga_pll:u1|altpll:altpll_component|vga_pll_altpll:auto_generated                                                       ; vga_pll_altpll       ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                         ;
++--------+--------------+---------+--------------+--------------+-----------------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance             ; IP Include File ;
++--------+--------------+---------+--------------+--------------+-----------------------------+-----------------+
+; N/A    ; ALTPLL       ; 16.0    ; N/A          ; N/A          ; |Adam3201Project|vga_pll:u1 ;                 ;
++--------+--------------+---------+--------------+--------------+-----------------------------+-----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Protected by Synthesis                                                                                                                          ;
++-------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+; Register Name                             ; Protected by Synthesis Attribute or Preserve Register Assignment ; Not to be Touched by Netlist Optimizations ;
++-------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+; vga_controller:vga_ins|H_Cont[0]          ; yes                                                              ; yes                                        ;
+; vga_controller:vga_ins|H_Cont[18]         ; yes                                                              ; yes                                        ;
+; vga_controller:vga_ins|H_Cont[17]         ; yes                                                              ; yes                                        ;
+; vga_controller:vga_ins|H_Cont[16]         ; yes                                                              ; yes                                        ;
+; vga_controller:vga_ins|H_Cont[15]         ; yes                                                              ; yes                                        ;
+; vga_controller:vga_ins|H_Cont[14]         ; yes                                                              ; yes                                        ;
+; vga_controller:vga_ins|H_Cont[13]         ; yes                                                              ; yes                                        ;
+; vga_controller:vga_ins|H_Cont[12]         ; yes                                                              ; yes                                        ;
+; vga_controller:vga_ins|H_Cont[11]         ; yes                                                              ; yes                                        ;
+; vga_controller:vga_ins|H_Cont[10]         ; yes                                                              ; yes                                        ;
+; vga_controller:vga_ins|H_Cont[9]          ; yes                                                              ; yes                                        ;
+; vga_controller:vga_ins|H_Cont[8]          ; yes                                                              ; yes                                        ;
+; vga_controller:vga_ins|H_Cont[7]          ; yes                                                              ; yes                                        ;
+; vga_controller:vga_ins|H_Cont[6]          ; yes                                                              ; yes                                        ;
+; vga_controller:vga_ins|H_Cont[5]          ; yes                                                              ; yes                                        ;
+; vga_controller:vga_ins|H_Cont[4]          ; yes                                                              ; yes                                        ;
+; vga_controller:vga_ins|H_Cont[3]          ; yes                                                              ; yes                                        ;
+; vga_controller:vga_ins|H_Cont[2]          ; yes                                                              ; yes                                        ;
+; vga_controller:vga_ins|H_Cont[1]          ; yes                                                              ; yes                                        ;
+; Total number of protected registers is 19 ;                                                                  ;                                            ;
++-------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
 
 
 +---------------------------------------------------------------------------------+
@@ -317,23 +419,69 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 131   ;
+; Total registers                              ; 190   ;
 ; Number of registers using Synchronous Clear  ; 52    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 40    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 61    ;
+; Number of registers using Clock Enable       ; 71    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
-; 3:1                ; 33 bits   ; 66 LEs        ; 33 LEs               ; 33 LEs                 ; Yes        ; |Adam3201Project|sonic:sonic1|us_counter[29] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
+; 3:1                ; 33 bits   ; 66 LEs        ; 33 LEs               ; 33 LEs                 ; Yes        ; |Adam3201Project|sonic:sonic1|us_counter[1] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
+
+
++-------------------------------------------------------+
+; Source assignments for vga_controller:vga_ins         ;
++---------------------------+-------+------+------------+
+; Assignment                ; Value ; From ; To         ;
++---------------------------+-------+------+------------+
+; PRESERVE_REGISTER         ; on    ; -    ; H_Cont[0]  ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; H_Cont[0]  ;
+; PRESERVE_REGISTER         ; on    ; -    ; H_Cont[18] ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; H_Cont[18] ;
+; PRESERVE_REGISTER         ; on    ; -    ; H_Cont[17] ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; H_Cont[17] ;
+; PRESERVE_REGISTER         ; on    ; -    ; H_Cont[16] ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; H_Cont[16] ;
+; PRESERVE_REGISTER         ; on    ; -    ; H_Cont[15] ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; H_Cont[15] ;
+; PRESERVE_REGISTER         ; on    ; -    ; H_Cont[14] ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; H_Cont[14] ;
+; PRESERVE_REGISTER         ; on    ; -    ; H_Cont[13] ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; H_Cont[13] ;
+; PRESERVE_REGISTER         ; on    ; -    ; H_Cont[12] ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; H_Cont[12] ;
+; PRESERVE_REGISTER         ; on    ; -    ; H_Cont[11] ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; H_Cont[11] ;
+; PRESERVE_REGISTER         ; on    ; -    ; H_Cont[10] ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; H_Cont[10] ;
+; PRESERVE_REGISTER         ; on    ; -    ; H_Cont[9]  ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; H_Cont[9]  ;
+; PRESERVE_REGISTER         ; on    ; -    ; H_Cont[8]  ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; H_Cont[8]  ;
+; PRESERVE_REGISTER         ; on    ; -    ; H_Cont[7]  ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; H_Cont[7]  ;
+; PRESERVE_REGISTER         ; on    ; -    ; H_Cont[6]  ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; H_Cont[6]  ;
+; PRESERVE_REGISTER         ; on    ; -    ; H_Cont[5]  ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; H_Cont[5]  ;
+; PRESERVE_REGISTER         ; on    ; -    ; H_Cont[4]  ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; H_Cont[4]  ;
+; PRESERVE_REGISTER         ; on    ; -    ; H_Cont[3]  ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; H_Cont[3]  ;
+; PRESERVE_REGISTER         ; on    ; -    ; H_Cont[2]  ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; H_Cont[2]  ;
+; PRESERVE_REGISTER         ; on    ; -    ; H_Cont[1]  ;
+; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; H_Cont[1]  ;
++---------------------------+-------+------+------------+
 
 
 +------------------------------------------------------------------------+
@@ -343,6 +491,409 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------------+----------------------------------+
 ; DIVISOR        ; 000000000001100100 ; Unsigned Binary                  ;
 +----------------+--------------------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_pll:u1|altpll:altpll_component ;
++-------------------------------+---------------------------+---------------------+
+; Parameter Name                ; Value                     ; Type                ;
++-------------------------------+---------------------------+---------------------+
+; OPERATION_MODE                ; NORMAL                    ; Untyped             ;
+; PLL_TYPE                      ; AUTO                      ; Untyped             ;
+; LPM_HINT                      ; CBX_MODULE_PREFIX=vga_pll ; Untyped             ;
+; QUALIFY_CONF_DONE             ; OFF                       ; Untyped             ;
+; COMPENSATE_CLOCK              ; CLK0                      ; Untyped             ;
+; SCAN_CHAIN                    ; LONG                      ; Untyped             ;
+; PRIMARY_CLOCK                 ; INCLK0                    ; Untyped             ;
+; INCLK0_INPUT_FREQUENCY        ; 20000                     ; Signed Integer      ;
+; INCLK1_INPUT_FREQUENCY        ; 0                         ; Untyped             ;
+; GATE_LOCK_SIGNAL              ; NO                        ; Untyped             ;
+; GATE_LOCK_COUNTER             ; 0                         ; Untyped             ;
+; LOCK_HIGH                     ; 1                         ; Untyped             ;
+; LOCK_LOW                      ; 1                         ; Untyped             ;
+; VALID_LOCK_MULTIPLIER         ; 1                         ; Untyped             ;
+; INVALID_LOCK_MULTIPLIER       ; 5                         ; Untyped             ;
+; SWITCH_OVER_ON_LOSSCLK        ; OFF                       ; Untyped             ;
+; SWITCH_OVER_ON_GATED_LOCK     ; OFF                       ; Untyped             ;
+; ENABLE_SWITCH_OVER_COUNTER    ; OFF                       ; Untyped             ;
+; SKIP_VCO                      ; OFF                       ; Untyped             ;
+; SWITCH_OVER_COUNTER           ; 0                         ; Untyped             ;
+; SWITCH_OVER_TYPE              ; AUTO                      ; Untyped             ;
+; FEEDBACK_SOURCE               ; EXTCLK0                   ; Untyped             ;
+; BANDWIDTH                     ; 0                         ; Untyped             ;
+; BANDWIDTH_TYPE                ; AUTO                      ; Untyped             ;
+; SPREAD_FREQUENCY              ; 0                         ; Untyped             ;
+; DOWN_SPREAD                   ; 0                         ; Untyped             ;
+; SELF_RESET_ON_GATED_LOSS_LOCK ; OFF                       ; Untyped             ;
+; SELF_RESET_ON_LOSS_LOCK       ; OFF                       ; Untyped             ;
+; CLK9_MULTIPLY_BY              ; 0                         ; Untyped             ;
+; CLK8_MULTIPLY_BY              ; 0                         ; Untyped             ;
+; CLK7_MULTIPLY_BY              ; 0                         ; Untyped             ;
+; CLK6_MULTIPLY_BY              ; 0                         ; Untyped             ;
+; CLK5_MULTIPLY_BY              ; 1                         ; Untyped             ;
+; CLK4_MULTIPLY_BY              ; 1                         ; Untyped             ;
+; CLK3_MULTIPLY_BY              ; 1                         ; Untyped             ;
+; CLK2_MULTIPLY_BY              ; 1                         ; Untyped             ;
+; CLK1_MULTIPLY_BY              ; 1                         ; Untyped             ;
+; CLK0_MULTIPLY_BY              ; 1                         ; Signed Integer      ;
+; CLK9_DIVIDE_BY                ; 0                         ; Untyped             ;
+; CLK8_DIVIDE_BY                ; 0                         ; Untyped             ;
+; CLK7_DIVIDE_BY                ; 0                         ; Untyped             ;
+; CLK6_DIVIDE_BY                ; 0                         ; Untyped             ;
+; CLK5_DIVIDE_BY                ; 1                         ; Untyped             ;
+; CLK4_DIVIDE_BY                ; 1                         ; Untyped             ;
+; CLK3_DIVIDE_BY                ; 1                         ; Untyped             ;
+; CLK2_DIVIDE_BY                ; 1                         ; Untyped             ;
+; CLK1_DIVIDE_BY                ; 1                         ; Untyped             ;
+; CLK0_DIVIDE_BY                ; 2                         ; Signed Integer      ;
+; CLK9_PHASE_SHIFT              ; 0                         ; Untyped             ;
+; CLK8_PHASE_SHIFT              ; 0                         ; Untyped             ;
+; CLK7_PHASE_SHIFT              ; 0                         ; Untyped             ;
+; CLK6_PHASE_SHIFT              ; 0                         ; Untyped             ;
+; CLK5_PHASE_SHIFT              ; 0                         ; Untyped             ;
+; CLK4_PHASE_SHIFT              ; 0                         ; Untyped             ;
+; CLK3_PHASE_SHIFT              ; 0                         ; Untyped             ;
+; CLK2_PHASE_SHIFT              ; 0                         ; Untyped             ;
+; CLK1_PHASE_SHIFT              ; 0                         ; Untyped             ;
+; CLK0_PHASE_SHIFT              ; 0                         ; Untyped             ;
+; CLK5_TIME_DELAY               ; 0                         ; Untyped             ;
+; CLK4_TIME_DELAY               ; 0                         ; Untyped             ;
+; CLK3_TIME_DELAY               ; 0                         ; Untyped             ;
+; CLK2_TIME_DELAY               ; 0                         ; Untyped             ;
+; CLK1_TIME_DELAY               ; 0                         ; Untyped             ;
+; CLK0_TIME_DELAY               ; 0                         ; Untyped             ;
+; CLK9_DUTY_CYCLE               ; 50                        ; Untyped             ;
+; CLK8_DUTY_CYCLE               ; 50                        ; Untyped             ;
+; CLK7_DUTY_CYCLE               ; 50                        ; Untyped             ;
+; CLK6_DUTY_CYCLE               ; 50                        ; Untyped             ;
+; CLK5_DUTY_CYCLE               ; 50                        ; Untyped             ;
+; CLK4_DUTY_CYCLE               ; 50                        ; Untyped             ;
+; CLK3_DUTY_CYCLE               ; 50                        ; Untyped             ;
+; CLK2_DUTY_CYCLE               ; 50                        ; Untyped             ;
+; CLK1_DUTY_CYCLE               ; 50                        ; Untyped             ;
+; CLK0_DUTY_CYCLE               ; 50                        ; Signed Integer      ;
+; CLK9_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped             ;
+; CLK8_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped             ;
+; CLK7_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped             ;
+; CLK6_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped             ;
+; CLK5_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped             ;
+; CLK4_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped             ;
+; CLK3_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped             ;
+; CLK2_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped             ;
+; CLK1_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped             ;
+; CLK0_USE_EVEN_COUNTER_MODE    ; OFF                       ; Untyped             ;
+; CLK9_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped             ;
+; CLK8_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped             ;
+; CLK7_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped             ;
+; CLK6_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped             ;
+; CLK5_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped             ;
+; CLK4_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped             ;
+; CLK3_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped             ;
+; CLK2_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped             ;
+; CLK1_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped             ;
+; CLK0_USE_EVEN_COUNTER_VALUE   ; OFF                       ; Untyped             ;
+; LOCK_WINDOW_UI                ;  0.05                     ; Untyped             ;
+; LOCK_WINDOW_UI_BITS           ; UNUSED                    ; Untyped             ;
+; VCO_RANGE_DETECTOR_LOW_BITS   ; UNUSED                    ; Untyped             ;
+; VCO_RANGE_DETECTOR_HIGH_BITS  ; UNUSED                    ; Untyped             ;
+; DPA_MULTIPLY_BY               ; 0                         ; Untyped             ;
+; DPA_DIVIDE_BY                 ; 1                         ; Untyped             ;
+; DPA_DIVIDER                   ; 0                         ; Untyped             ;
+; EXTCLK3_MULTIPLY_BY           ; 1                         ; Untyped             ;
+; EXTCLK2_MULTIPLY_BY           ; 1                         ; Untyped             ;
+; EXTCLK1_MULTIPLY_BY           ; 1                         ; Untyped             ;
+; EXTCLK0_MULTIPLY_BY           ; 1                         ; Untyped             ;
+; EXTCLK3_DIVIDE_BY             ; 1                         ; Untyped             ;
+; EXTCLK2_DIVIDE_BY             ; 1                         ; Untyped             ;
+; EXTCLK1_DIVIDE_BY             ; 1                         ; Untyped             ;
+; EXTCLK0_DIVIDE_BY             ; 1                         ; Untyped             ;
+; EXTCLK3_PHASE_SHIFT           ; 0                         ; Untyped             ;
+; EXTCLK2_PHASE_SHIFT           ; 0                         ; Untyped             ;
+; EXTCLK1_PHASE_SHIFT           ; 0                         ; Untyped             ;
+; EXTCLK0_PHASE_SHIFT           ; 0                         ; Untyped             ;
+; EXTCLK3_TIME_DELAY            ; 0                         ; Untyped             ;
+; EXTCLK2_TIME_DELAY            ; 0                         ; Untyped             ;
+; EXTCLK1_TIME_DELAY            ; 0                         ; Untyped             ;
+; EXTCLK0_TIME_DELAY            ; 0                         ; Untyped             ;
+; EXTCLK3_DUTY_CYCLE            ; 50                        ; Untyped             ;
+; EXTCLK2_DUTY_CYCLE            ; 50                        ; Untyped             ;
+; EXTCLK1_DUTY_CYCLE            ; 50                        ; Untyped             ;
+; EXTCLK0_DUTY_CYCLE            ; 50                        ; Untyped             ;
+; VCO_MULTIPLY_BY               ; 0                         ; Untyped             ;
+; VCO_DIVIDE_BY                 ; 0                         ; Untyped             ;
+; SCLKOUT0_PHASE_SHIFT          ; 0                         ; Untyped             ;
+; SCLKOUT1_PHASE_SHIFT          ; 0                         ; Untyped             ;
+; VCO_MIN                       ; 0                         ; Untyped             ;
+; VCO_MAX                       ; 0                         ; Untyped             ;
+; VCO_CENTER                    ; 0                         ; Untyped             ;
+; PFD_MIN                       ; 0                         ; Untyped             ;
+; PFD_MAX                       ; 0                         ; Untyped             ;
+; M_INITIAL                     ; 0                         ; Untyped             ;
+; M                             ; 0                         ; Untyped             ;
+; N                             ; 1                         ; Untyped             ;
+; M2                            ; 1                         ; Untyped             ;
+; N2                            ; 1                         ; Untyped             ;
+; SS                            ; 1                         ; Untyped             ;
+; C0_HIGH                       ; 0                         ; Untyped             ;
+; C1_HIGH                       ; 0                         ; Untyped             ;
+; C2_HIGH                       ; 0                         ; Untyped             ;
+; C3_HIGH                       ; 0                         ; Untyped             ;
+; C4_HIGH                       ; 0                         ; Untyped             ;
+; C5_HIGH                       ; 0                         ; Untyped             ;
+; C6_HIGH                       ; 0                         ; Untyped             ;
+; C7_HIGH                       ; 0                         ; Untyped             ;
+; C8_HIGH                       ; 0                         ; Untyped             ;
+; C9_HIGH                       ; 0                         ; Untyped             ;
+; C0_LOW                        ; 0                         ; Untyped             ;
+; C1_LOW                        ; 0                         ; Untyped             ;
+; C2_LOW                        ; 0                         ; Untyped             ;
+; C3_LOW                        ; 0                         ; Untyped             ;
+; C4_LOW                        ; 0                         ; Untyped             ;
+; C5_LOW                        ; 0                         ; Untyped             ;
+; C6_LOW                        ; 0                         ; Untyped             ;
+; C7_LOW                        ; 0                         ; Untyped             ;
+; C8_LOW                        ; 0                         ; Untyped             ;
+; C9_LOW                        ; 0                         ; Untyped             ;
+; C0_INITIAL                    ; 0                         ; Untyped             ;
+; C1_INITIAL                    ; 0                         ; Untyped             ;
+; C2_INITIAL                    ; 0                         ; Untyped             ;
+; C3_INITIAL                    ; 0                         ; Untyped             ;
+; C4_INITIAL                    ; 0                         ; Untyped             ;
+; C5_INITIAL                    ; 0                         ; Untyped             ;
+; C6_INITIAL                    ; 0                         ; Untyped             ;
+; C7_INITIAL                    ; 0                         ; Untyped             ;
+; C8_INITIAL                    ; 0                         ; Untyped             ;
+; C9_INITIAL                    ; 0                         ; Untyped             ;
+; C0_MODE                       ; BYPASS                    ; Untyped             ;
+; C1_MODE                       ; BYPASS                    ; Untyped             ;
+; C2_MODE                       ; BYPASS                    ; Untyped             ;
+; C3_MODE                       ; BYPASS                    ; Untyped             ;
+; C4_MODE                       ; BYPASS                    ; Untyped             ;
+; C5_MODE                       ; BYPASS                    ; Untyped             ;
+; C6_MODE                       ; BYPASS                    ; Untyped             ;
+; C7_MODE                       ; BYPASS                    ; Untyped             ;
+; C8_MODE                       ; BYPASS                    ; Untyped             ;
+; C9_MODE                       ; BYPASS                    ; Untyped             ;
+; C0_PH                         ; 0                         ; Untyped             ;
+; C1_PH                         ; 0                         ; Untyped             ;
+; C2_PH                         ; 0                         ; Untyped             ;
+; C3_PH                         ; 0                         ; Untyped             ;
+; C4_PH                         ; 0                         ; Untyped             ;
+; C5_PH                         ; 0                         ; Untyped             ;
+; C6_PH                         ; 0                         ; Untyped             ;
+; C7_PH                         ; 0                         ; Untyped             ;
+; C8_PH                         ; 0                         ; Untyped             ;
+; C9_PH                         ; 0                         ; Untyped             ;
+; L0_HIGH                       ; 1                         ; Untyped             ;
+; L1_HIGH                       ; 1                         ; Untyped             ;
+; G0_HIGH                       ; 1                         ; Untyped             ;
+; G1_HIGH                       ; 1                         ; Untyped             ;
+; G2_HIGH                       ; 1                         ; Untyped             ;
+; G3_HIGH                       ; 1                         ; Untyped             ;
+; E0_HIGH                       ; 1                         ; Untyped             ;
+; E1_HIGH                       ; 1                         ; Untyped             ;
+; E2_HIGH                       ; 1                         ; Untyped             ;
+; E3_HIGH                       ; 1                         ; Untyped             ;
+; L0_LOW                        ; 1                         ; Untyped             ;
+; L1_LOW                        ; 1                         ; Untyped             ;
+; G0_LOW                        ; 1                         ; Untyped             ;
+; G1_LOW                        ; 1                         ; Untyped             ;
+; G2_LOW                        ; 1                         ; Untyped             ;
+; G3_LOW                        ; 1                         ; Untyped             ;
+; E0_LOW                        ; 1                         ; Untyped             ;
+; E1_LOW                        ; 1                         ; Untyped             ;
+; E2_LOW                        ; 1                         ; Untyped             ;
+; E3_LOW                        ; 1                         ; Untyped             ;
+; L0_INITIAL                    ; 1                         ; Untyped             ;
+; L1_INITIAL                    ; 1                         ; Untyped             ;
+; G0_INITIAL                    ; 1                         ; Untyped             ;
+; G1_INITIAL                    ; 1                         ; Untyped             ;
+; G2_INITIAL                    ; 1                         ; Untyped             ;
+; G3_INITIAL                    ; 1                         ; Untyped             ;
+; E0_INITIAL                    ; 1                         ; Untyped             ;
+; E1_INITIAL                    ; 1                         ; Untyped             ;
+; E2_INITIAL                    ; 1                         ; Untyped             ;
+; E3_INITIAL                    ; 1                         ; Untyped             ;
+; L0_MODE                       ; BYPASS                    ; Untyped             ;
+; L1_MODE                       ; BYPASS                    ; Untyped             ;
+; G0_MODE                       ; BYPASS                    ; Untyped             ;
+; G1_MODE                       ; BYPASS                    ; Untyped             ;
+; G2_MODE                       ; BYPASS                    ; Untyped             ;
+; G3_MODE                       ; BYPASS                    ; Untyped             ;
+; E0_MODE                       ; BYPASS                    ; Untyped             ;
+; E1_MODE                       ; BYPASS                    ; Untyped             ;
+; E2_MODE                       ; BYPASS                    ; Untyped             ;
+; E3_MODE                       ; BYPASS                    ; Untyped             ;
+; L0_PH                         ; 0                         ; Untyped             ;
+; L1_PH                         ; 0                         ; Untyped             ;
+; G0_PH                         ; 0                         ; Untyped             ;
+; G1_PH                         ; 0                         ; Untyped             ;
+; G2_PH                         ; 0                         ; Untyped             ;
+; G3_PH                         ; 0                         ; Untyped             ;
+; E0_PH                         ; 0                         ; Untyped             ;
+; E1_PH                         ; 0                         ; Untyped             ;
+; E2_PH                         ; 0                         ; Untyped             ;
+; E3_PH                         ; 0                         ; Untyped             ;
+; M_PH                          ; 0                         ; Untyped             ;
+; C1_USE_CASC_IN                ; OFF                       ; Untyped             ;
+; C2_USE_CASC_IN                ; OFF                       ; Untyped             ;
+; C3_USE_CASC_IN                ; OFF                       ; Untyped             ;
+; C4_USE_CASC_IN                ; OFF                       ; Untyped             ;
+; C5_USE_CASC_IN                ; OFF                       ; Untyped             ;
+; C6_USE_CASC_IN                ; OFF                       ; Untyped             ;
+; C7_USE_CASC_IN                ; OFF                       ; Untyped             ;
+; C8_USE_CASC_IN                ; OFF                       ; Untyped             ;
+; C9_USE_CASC_IN                ; OFF                       ; Untyped             ;
+; CLK0_COUNTER                  ; G0                        ; Untyped             ;
+; CLK1_COUNTER                  ; G0                        ; Untyped             ;
+; CLK2_COUNTER                  ; G0                        ; Untyped             ;
+; CLK3_COUNTER                  ; G0                        ; Untyped             ;
+; CLK4_COUNTER                  ; G0                        ; Untyped             ;
+; CLK5_COUNTER                  ; G0                        ; Untyped             ;
+; CLK6_COUNTER                  ; E0                        ; Untyped             ;
+; CLK7_COUNTER                  ; E1                        ; Untyped             ;
+; CLK8_COUNTER                  ; E2                        ; Untyped             ;
+; CLK9_COUNTER                  ; E3                        ; Untyped             ;
+; L0_TIME_DELAY                 ; 0                         ; Untyped             ;
+; L1_TIME_DELAY                 ; 0                         ; Untyped             ;
+; G0_TIME_DELAY                 ; 0                         ; Untyped             ;
+; G1_TIME_DELAY                 ; 0                         ; Untyped             ;
+; G2_TIME_DELAY                 ; 0                         ; Untyped             ;
+; G3_TIME_DELAY                 ; 0                         ; Untyped             ;
+; E0_TIME_DELAY                 ; 0                         ; Untyped             ;
+; E1_TIME_DELAY                 ; 0                         ; Untyped             ;
+; E2_TIME_DELAY                 ; 0                         ; Untyped             ;
+; E3_TIME_DELAY                 ; 0                         ; Untyped             ;
+; M_TIME_DELAY                  ; 0                         ; Untyped             ;
+; N_TIME_DELAY                  ; 0                         ; Untyped             ;
+; EXTCLK3_COUNTER               ; E3                        ; Untyped             ;
+; EXTCLK2_COUNTER               ; E2                        ; Untyped             ;
+; EXTCLK1_COUNTER               ; E1                        ; Untyped             ;
+; EXTCLK0_COUNTER               ; E0                        ; Untyped             ;
+; ENABLE0_COUNTER               ; L0                        ; Untyped             ;
+; ENABLE1_COUNTER               ; L0                        ; Untyped             ;
+; CHARGE_PUMP_CURRENT           ; 2                         ; Untyped             ;
+; LOOP_FILTER_R                 ;  1.000000                 ; Untyped             ;
+; LOOP_FILTER_C                 ; 5                         ; Untyped             ;
+; CHARGE_PUMP_CURRENT_BITS      ; 9999                      ; Untyped             ;
+; LOOP_FILTER_R_BITS            ; 9999                      ; Untyped             ;
+; LOOP_FILTER_C_BITS            ; 9999                      ; Untyped             ;
+; VCO_POST_SCALE                ; 0                         ; Untyped             ;
+; CLK2_OUTPUT_FREQUENCY         ; 0                         ; Untyped             ;
+; CLK1_OUTPUT_FREQUENCY         ; 0                         ; Untyped             ;
+; CLK0_OUTPUT_FREQUENCY         ; 0                         ; Untyped             ;
+; INTENDED_DEVICE_FAMILY        ; MAX 10                    ; Untyped             ;
+; PORT_CLKENA0                  ; PORT_UNUSED               ; Untyped             ;
+; PORT_CLKENA1                  ; PORT_UNUSED               ; Untyped             ;
+; PORT_CLKENA2                  ; PORT_UNUSED               ; Untyped             ;
+; PORT_CLKENA3                  ; PORT_UNUSED               ; Untyped             ;
+; PORT_CLKENA4                  ; PORT_UNUSED               ; Untyped             ;
+; PORT_CLKENA5                  ; PORT_UNUSED               ; Untyped             ;
+; PORT_EXTCLKENA0               ; PORT_CONNECTIVITY         ; Untyped             ;
+; PORT_EXTCLKENA1               ; PORT_CONNECTIVITY         ; Untyped             ;
+; PORT_EXTCLKENA2               ; PORT_CONNECTIVITY         ; Untyped             ;
+; PORT_EXTCLKENA3               ; PORT_CONNECTIVITY         ; Untyped             ;
+; PORT_EXTCLK0                  ; PORT_UNUSED               ; Untyped             ;
+; PORT_EXTCLK1                  ; PORT_UNUSED               ; Untyped             ;
+; PORT_EXTCLK2                  ; PORT_UNUSED               ; Untyped             ;
+; PORT_EXTCLK3                  ; PORT_UNUSED               ; Untyped             ;
+; PORT_CLKBAD0                  ; PORT_UNUSED               ; Untyped             ;
+; PORT_CLKBAD1                  ; PORT_UNUSED               ; Untyped             ;
+; PORT_CLK0                     ; PORT_USED                 ; Untyped             ;
+; PORT_CLK1                     ; PORT_UNUSED               ; Untyped             ;
+; PORT_CLK2                     ; PORT_UNUSED               ; Untyped             ;
+; PORT_CLK3                     ; PORT_UNUSED               ; Untyped             ;
+; PORT_CLK4                     ; PORT_UNUSED               ; Untyped             ;
+; PORT_CLK5                     ; PORT_UNUSED               ; Untyped             ;
+; PORT_CLK6                     ; PORT_UNUSED               ; Untyped             ;
+; PORT_CLK7                     ; PORT_UNUSED               ; Untyped             ;
+; PORT_CLK8                     ; PORT_UNUSED               ; Untyped             ;
+; PORT_CLK9                     ; PORT_UNUSED               ; Untyped             ;
+; PORT_SCANDATA                 ; PORT_UNUSED               ; Untyped             ;
+; PORT_SCANDATAOUT              ; PORT_UNUSED               ; Untyped             ;
+; PORT_SCANDONE                 ; PORT_UNUSED               ; Untyped             ;
+; PORT_SCLKOUT1                 ; PORT_CONNECTIVITY         ; Untyped             ;
+; PORT_SCLKOUT0                 ; PORT_CONNECTIVITY         ; Untyped             ;
+; PORT_ACTIVECLOCK              ; PORT_UNUSED               ; Untyped             ;
+; PORT_CLKLOSS                  ; PORT_UNUSED               ; Untyped             ;
+; PORT_INCLK1                   ; PORT_UNUSED               ; Untyped             ;
+; PORT_INCLK0                   ; PORT_USED                 ; Untyped             ;
+; PORT_FBIN                     ; PORT_UNUSED               ; Untyped             ;
+; PORT_PLLENA                   ; PORT_UNUSED               ; Untyped             ;
+; PORT_CLKSWITCH                ; PORT_UNUSED               ; Untyped             ;
+; PORT_ARESET                   ; PORT_USED                 ; Untyped             ;
+; PORT_PFDENA                   ; PORT_UNUSED               ; Untyped             ;
+; PORT_SCANCLK                  ; PORT_UNUSED               ; Untyped             ;
+; PORT_SCANACLR                 ; PORT_UNUSED               ; Untyped             ;
+; PORT_SCANREAD                 ; PORT_UNUSED               ; Untyped             ;
+; PORT_SCANWRITE                ; PORT_UNUSED               ; Untyped             ;
+; PORT_ENABLE0                  ; PORT_CONNECTIVITY         ; Untyped             ;
+; PORT_ENABLE1                  ; PORT_CONNECTIVITY         ; Untyped             ;
+; PORT_LOCKED                   ; PORT_USED                 ; Untyped             ;
+; PORT_CONFIGUPDATE             ; PORT_UNUSED               ; Untyped             ;
+; PORT_FBOUT                    ; PORT_CONNECTIVITY         ; Untyped             ;
+; PORT_PHASEDONE                ; PORT_UNUSED               ; Untyped             ;
+; PORT_PHASESTEP                ; PORT_UNUSED               ; Untyped             ;
+; PORT_PHASEUPDOWN              ; PORT_UNUSED               ; Untyped             ;
+; PORT_SCANCLKENA               ; PORT_UNUSED               ; Untyped             ;
+; PORT_PHASECOUNTERSELECT       ; PORT_UNUSED               ; Untyped             ;
+; PORT_VCOOVERRANGE             ; PORT_CONNECTIVITY         ; Untyped             ;
+; PORT_VCOUNDERRANGE            ; PORT_CONNECTIVITY         ; Untyped             ;
+; M_TEST_SOURCE                 ; 5                         ; Untyped             ;
+; C0_TEST_SOURCE                ; 5                         ; Untyped             ;
+; C1_TEST_SOURCE                ; 5                         ; Untyped             ;
+; C2_TEST_SOURCE                ; 5                         ; Untyped             ;
+; C3_TEST_SOURCE                ; 5                         ; Untyped             ;
+; C4_TEST_SOURCE                ; 5                         ; Untyped             ;
+; C5_TEST_SOURCE                ; 5                         ; Untyped             ;
+; C6_TEST_SOURCE                ; 5                         ; Untyped             ;
+; C7_TEST_SOURCE                ; 5                         ; Untyped             ;
+; C8_TEST_SOURCE                ; 5                         ; Untyped             ;
+; C9_TEST_SOURCE                ; 5                         ; Untyped             ;
+; CBXI_PARAMETER                ; vga_pll_altpll            ; Untyped             ;
+; VCO_FREQUENCY_CONTROL         ; AUTO                      ; Untyped             ;
+; VCO_PHASE_SHIFT_STEP          ; 0                         ; Untyped             ;
+; WIDTH_CLOCK                   ; 5                         ; Signed Integer      ;
+; WIDTH_PHASECOUNTERSELECT      ; 4                         ; Untyped             ;
+; USING_FBMIMICBIDIR_PORT       ; OFF                       ; Untyped             ;
+; DEVICE_FAMILY                 ; MAX 10                    ; Untyped             ;
+; SCAN_CHAIN_MIF_FILE           ; UNUSED                    ; Untyped             ;
+; SIM_GATE_LOCK_DEVICE_BEHAVIOR ; OFF                       ; Untyped             ;
+; AUTO_CARRY_CHAINS             ; ON                        ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS          ; OFF                       ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS           ; ON                        ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS        ; OFF                       ; IGNORE_CASCADE      ;
++-------------------------------+---------------------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_controller:vga_ins ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; VIDEO_W        ; 640   ; Signed Integer                             ;
+; VIDEO_H        ; 480   ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_controller:vga_ins|video_sync_generator:LTM_ins ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; hori_line      ; 800   ; Signed Integer                                                          ;
+; hori_back      ; 144   ; Signed Integer                                                          ;
+; hori_front     ; 16    ; Signed Integer                                                          ;
+; vert_line      ; 525   ; Signed Integer                                                          ;
+; vert_back      ; 34    ; Signed Integer                                                          ;
+; vert_front     ; 11    ; Signed Integer                                                          ;
+; H_sync_cycle   ; 96    ; Signed Integer                                                          ;
+; V_sync_cycle   ; 2     ; Signed Integer                                                          ;
+; H_BLANK        ; 112   ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -484,6 +1035,185 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: vga_controller:vga_ins|lpm_divide:Mod2 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                       ;
+; LPM_WIDTHD             ; 10             ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_6nl ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: vga_controller:vga_ins|lpm_divide:Div1 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                                       ;
+; LPM_WIDTHD             ; 7              ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_ltl ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: vga_controller:vga_ins|lpm_divide:Mod1 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                       ;
+; LPM_WIDTHD             ; 7              ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_sll ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: vga_controller:vga_ins|lpm_divide:Div0 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                       ;
+; LPM_WIDTHD             ; 4              ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_8sl ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: vga_controller:vga_ins|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                       ;
+; LPM_WIDTHD             ; 4              ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_rll ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; altpll Parameter Settings by Entity Instance                       ;
++-------------------------------+------------------------------------+
+; Name                          ; Value                              ;
++-------------------------------+------------------------------------+
+; Number of entity instances    ; 1                                  ;
+; Entity Instance               ; vga_pll:u1|altpll:altpll_component ;
+;     -- OPERATION_MODE         ; NORMAL                             ;
+;     -- PLL_TYPE               ; AUTO                               ;
+;     -- PRIMARY_CLOCK          ; INCLK0                             ;
+;     -- INCLK0_INPUT_FREQUENCY ; 20000                              ;
+;     -- INCLK1_INPUT_FREQUENCY ; 0                                  ;
+;     -- VCO_MULTIPLY_BY        ; 0                                  ;
+;     -- VCO_DIVIDE_BY          ; 0                                  ;
++-------------------------------+------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vga_controller:vga_ins|seg7:s2"                                                                                                                                                   ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; d    ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vga_controller:vga_ins|seg7:s1"                                                                                                                                                   ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; d    ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vga_controller:vga_ins|seg7:s0"                                                                                                                                                   ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; d    ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vga_controller:vga_ins"                                                                                                                                                                ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; distance ; Input  ; Warning  ; Input port expression (33 bits) is wider than the input port (32 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; oBLANK_n ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                           ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Port Connectivity Checks: "vga_pll:u1"              ;
++--------+--------+----------+------------------------+
+; Port   ; Type   ; Severity ; Details                ;
++--------+--------+----------+------------------------+
+; areset ; Input  ; Info     ; Explicitly unconnected ;
+; locked ; Output ; Info     ; Explicitly unconnected ;
++--------+--------+----------+------------------------+
+
+
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "seg7:h2"                                                                                                                                                                          ;
 +------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -553,26 +1283,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 64                          ;
-; cycloneiii_ff         ; 131                         ;
+; boundary_port         ; 80                          ;
+; cycloneiii_ff         ; 190                         ;
+;     CLR               ; 30                          ;
 ;     ENA               ; 28                          ;
+;     ENA CLR           ; 10                          ;
 ;     ENA SCLR          ; 33                          ;
 ;     SCLR              ; 19                          ;
-;     plain             ; 51                          ;
-; cycloneiii_lcell_comb ; 2221                        ;
-;     arith             ; 684                         ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 98                          ;
-;         3 data inputs ; 583                         ;
-;     normal            ; 1537                        ;
-;         0 data inputs ; 104                         ;
-;         1 data inputs ; 43                          ;
-;         2 data inputs ; 899                         ;
-;         3 data inputs ; 6                           ;
-;         4 data inputs ; 485                         ;
+;     plain             ; 70                          ;
+; cycloneiii_lcell_comb ; 3872                        ;
+;     arith             ; 1150                        ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 157                         ;
+;         3 data inputs ; 987                         ;
+;     normal            ; 2722                        ;
+;         0 data inputs ; 178                         ;
+;         1 data inputs ; 49                          ;
+;         2 data inputs ; 1522                        ;
+;         3 data inputs ; 50                          ;
+;         4 data inputs ; 923                         ;
+; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 71.70                       ;
-; Average LUT depth     ; 58.14                       ;
+; Average LUT depth     ; 58.88                       ;
 +-----------------------+-----------------------------+
 
 
@@ -581,7 +1314,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:15     ;
+; Top            ; 00:00:11     ;
 +----------------+--------------+
 
 
@@ -591,16 +1324,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sun Nov 15 22:01:38 2020
+    Info: Processing started: Thu Nov 26 22:22:21 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Adam3201Project -c Adam3201Project
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file v/video_sync_generator.v
+    Info (12023): Found entity 1: video_sync_generator File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/v/video_sync_generator.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file v/vga_pll.v
+    Info (12023): Found entity 1: vga_pll File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/v/vga_pll.v Line: 42
+Info (12021): Found 1 design units, including 1 entities, in source file v/vga_controller.v
+    Info (12023): Found entity 1: vga_controller File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/v/vga_controller.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file adam3201project.v
     Info (12023): Found entity 1: Adam3201Project File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file motorpwm.v
     Info (12023): Found entity 1: MotorPWM File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/MotorPWM.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file clockdivider2k.v
-    Info (12023): Found entity 1: ClockDivider2K File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/ClockDivider2K.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file seg7.v
     Info (12023): Found entity 1: seg7 File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/seg7.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file clockdivider500k.v
@@ -608,23 +1345,97 @@ Info (12021): Found 1 design units, including 1 entities, in source file clockdi
 Info (12021): Found 1 design units, including 1 entities, in source file sonic.v
     Info (12023): Found entity 1: sonic File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/sonic.v Line: 1
 Info (12127): Elaborating entity "Adam3201Project" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at Adam3201Project.v(37): truncated value with size 32 to match size of target (2) File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 37
-Info (12128): Elaborating entity "ClockDivider500K" for hierarchy "ClockDivider500K:cdiv500k" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 28
-Info (12128): Elaborating entity "seg7" for hierarchy "seg7:h5" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 33
-Info (12128): Elaborating entity "MotorPWM" for hierarchy "MotorPWM:motor1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 42
-Info (12128): Elaborating entity "sonic" for hierarchy "sonic:sonic1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 47
+Warning (10230): Verilog HDL assignment warning at Adam3201Project.v(40): truncated value with size 32 to match size of target (2) File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 40
+Info (12128): Elaborating entity "ClockDivider500K" for hierarchy "ClockDivider500K:cdiv500k" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 30
+Info (12128): Elaborating entity "seg7" for hierarchy "seg7:h5" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 35
+Info (12128): Elaborating entity "MotorPWM" for hierarchy "MotorPWM:motor1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 45
+Info (12128): Elaborating entity "sonic" for hierarchy "sonic:sonic1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 50
 Warning (10230): Verilog HDL assignment warning at sonic.v(23): truncated value with size 32 to match size of target (10) File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/sonic.v Line: 23
 Warning (10230): Verilog HDL assignment warning at sonic.v(24): truncated value with size 32 to match size of target (10) File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/sonic.v Line: 24
 Warning (10230): Verilog HDL assignment warning at sonic.v(25): truncated value with size 32 to match size of target (22) File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/sonic.v Line: 25
-Info (278001): Inferred 6 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 50
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 50
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 49
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 49
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 48
+Info (12128): Elaborating entity "vga_pll" for hierarchy "vga_pll:u1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 62
+Info (12128): Elaborating entity "altpll" for hierarchy "vga_pll:u1|altpll:altpll_component" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/v/vga_pll.v Line: 106
+Info (12130): Elaborated megafunction instantiation "vga_pll:u1|altpll:altpll_component" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/v/vga_pll.v Line: 106
+Info (12133): Instantiated megafunction "vga_pll:u1|altpll:altpll_component" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/v/vga_pll.v Line: 106
+    Info (12134): Parameter "bandwidth_type" = "AUTO"
+    Info (12134): Parameter "clk0_divide_by" = "2"
+    Info (12134): Parameter "clk0_duty_cycle" = "50"
+    Info (12134): Parameter "clk0_multiply_by" = "1"
+    Info (12134): Parameter "clk0_phase_shift" = "0"
+    Info (12134): Parameter "compensate_clock" = "CLK0"
+    Info (12134): Parameter "inclk0_input_frequency" = "20000"
+    Info (12134): Parameter "intended_device_family" = "MAX 10"
+    Info (12134): Parameter "lpm_hint" = "CBX_MODULE_PREFIX=vga_pll"
+    Info (12134): Parameter "lpm_type" = "altpll"
+    Info (12134): Parameter "operation_mode" = "NORMAL"
+    Info (12134): Parameter "pll_type" = "AUTO"
+    Info (12134): Parameter "port_activeclock" = "PORT_UNUSED"
+    Info (12134): Parameter "port_areset" = "PORT_USED"
+    Info (12134): Parameter "port_clkbad0" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkbad1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkloss" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkswitch" = "PORT_UNUSED"
+    Info (12134): Parameter "port_configupdate" = "PORT_UNUSED"
+    Info (12134): Parameter "port_fbin" = "PORT_UNUSED"
+    Info (12134): Parameter "port_inclk0" = "PORT_USED"
+    Info (12134): Parameter "port_inclk1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_locked" = "PORT_USED"
+    Info (12134): Parameter "port_pfdena" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phasecounterselect" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phasedone" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phasestep" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phaseupdown" = "PORT_UNUSED"
+    Info (12134): Parameter "port_pllena" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanaclr" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanclk" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanclkena" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scandata" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scandataout" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scandone" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanread" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanwrite" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk0" = "PORT_USED"
+    Info (12134): Parameter "port_clk1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk3" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk4" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk5" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena0" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena3" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena4" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena5" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk0" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
+    Info (12134): Parameter "self_reset_on_loss_lock" = "OFF"
+    Info (12134): Parameter "width_clock" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/vga_pll_altpll.v
+    Info (12023): Found entity 1: vga_pll_altpll File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/vga_pll_altpll.v Line: 31
+Info (12128): Elaborating entity "vga_pll_altpll" for hierarchy "vga_pll:u1|altpll:altpll_component|vga_pll_altpll:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
+Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_controller:vga_ins" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 72
+Warning (10230): Verilog HDL assignment warning at vga_controller.v(199): truncated value with size 32 to match size of target (19) File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/v/vga_controller.v Line: 199
+Info (12128): Elaborating entity "video_sync_generator" for hierarchy "vga_controller:vga_ins|video_sync_generator:LTM_ins" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/v/vga_controller.v Line: 39
+Warning (10230): Verilog HDL assignment warning at video_sync_generator.v(89): truncated value with size 32 to match size of target (10) File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/v/video_sync_generator.v Line: 89
+Warning (10230): Verilog HDL assignment warning at video_sync_generator.v(92): truncated value with size 32 to match size of target (11) File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/v/video_sync_generator.v Line: 92
+Warning (10230): Verilog HDL assignment warning at video_sync_generator.v(111): truncated value with size 32 to match size of target (10) File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/v/video_sync_generator.v Line: 111
+Warning (10230): Verilog HDL assignment warning at video_sync_generator.v(112): truncated value with size 32 to match size of target (9) File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/v/video_sync_generator.v Line: 112
+Info (278001): Inferred 11 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 53
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 53
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 52
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 52
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 51
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sonic:sonic1|Div0" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/sonic.v Line: 34
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod2" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 50
-Info (12133): Instantiated megafunction "lpm_divide:Mod2" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 50
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "vga_controller:vga_ins|Mod2" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/v/vga_controller.v Line: 59
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "vga_controller:vga_ins|Div1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/v/vga_controller.v Line: 59
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "vga_controller:vga_ins|Mod1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/v/vga_controller.v Line: 58
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "vga_controller:vga_ins|Div0" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/v/vga_controller.v Line: 58
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "vga_controller:vga_ins|Mod0" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/v/vga_controller.v Line: 57
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod2" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 53
+Info (12133): Instantiated megafunction "lpm_divide:Mod2" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 53
     Info (12134): Parameter "LPM_WIDTHN" = "33"
     Info (12134): Parameter "LPM_WIDTHD" = "10"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -639,8 +1450,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/add_
     Info (12023): Found entity 1: add_sub_t3c File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/add_sub_t3c.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
     Info (12023): Found entity 1: add_sub_u3c File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/add_sub_u3c.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 50
-Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 50
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 53
+Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 53
     Info (12134): Parameter "LPM_WIDTHN" = "10"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -651,8 +1462,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_nlh File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/sign_div_unsign_nlh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ohe.tdf
     Info (12023): Found entity 1: alt_u_div_ohe File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_ohe.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 49
-Info (12133): Instantiated megafunction "lpm_divide:Mod1" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 49
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 52
+Info (12133): Instantiated megafunction "lpm_divide:Mod1" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 52
     Info (12134): Parameter "LPM_WIDTHN" = "33"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -663,8 +1474,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_slh File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/sign_div_unsign_slh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_2ie.tdf
     Info (12023): Found entity 1: alt_u_div_2ie File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_2ie.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 49
-Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 49
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 52
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 52
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -675,8 +1486,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_akh File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/sign_div_unsign_akh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_uee.tdf
     Info (12023): Found entity 1: alt_u_div_uee File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_uee.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 48
-Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 48
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 51
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 51
     Info (12134): Parameter "LPM_WIDTHN" = "33"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -699,29 +1510,67 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_rlh File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/sign_div_unsign_rlh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_0ie.tdf
     Info (12023): Found entity 1: alt_u_div_0ie File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_0ie.tdf Line: 27
-Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (12130): Elaborated megafunction instantiation "vga_controller:vga_ins|lpm_divide:Mod2" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/v/vga_controller.v Line: 59
+Info (12133): Instantiated megafunction "vga_controller:vga_ins|lpm_divide:Mod2" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/v/vga_controller.v Line: 59
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "10"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_6nl.tdf
+    Info (12023): Found entity 1: lpm_divide_6nl File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/lpm_divide_6nl.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_5nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_5nh File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/sign_div_unsign_5nh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_kke.tdf
+    Info (12023): Found entity 1: alt_u_div_kke File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_kke.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "vga_controller:vga_ins|lpm_divide:Mod1" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/v/vga_controller.v Line: 58
+Info (12133): Instantiated megafunction "vga_controller:vga_ins|lpm_divide:Mod1" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/v/vga_controller.v Line: 58
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_sll.tdf
+    Info (12023): Found entity 1: lpm_divide_sll File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/lpm_divide_sll.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_tlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_tlh File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/sign_div_unsign_tlh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_1ie.tdf
+    Info (12023): Found entity 1: alt_u_div_1ie File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_1ie.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "vga_controller:vga_ins|lpm_divide:Mod0" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/v/vga_controller.v Line: 57
+Info (12133): Instantiated megafunction "vga_controller:vga_ins|lpm_divide:Mod0" with the following parameter: File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/v/vga_controller.v Line: 57
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_rll.tdf
+    Info (12023): Found entity 1: lpm_divide_rll File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/lpm_divide_rll.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_olh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_olh File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/sign_div_unsign_olh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_qhe.tdf
+    Info (12023): Found entity 1: alt_u_div_qhe File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_qhe.tdf Line: 27
+Warning (12241): 7 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 4
-    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 4
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 4
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 4
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 4
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 4
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 4
-    Warning (13410): Pin "G13" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 6
-    Warning (13410): Pin "G15" is stuck at VCC File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 6
-    Warning (13410): Pin "G17" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 6
-    Warning (13410): Pin "G19" is stuck at VCC File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 6
-    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 7
-    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 7
-    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 7
-    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 7
-    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 7
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 5
+    Warning (13410): Pin "G13" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 7
+    Warning (13410): Pin "G15" is stuck at VCC File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 7
+    Warning (13410): Pin "G17" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 7
+    Warning (13410): Pin "G19" is stuck at VCC File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 7
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 8
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 8
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 8
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 8
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 8
 Info (286030): Timing-Driven Synthesis is running
 Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "lpm_divide:Mod2|lpm_divide_7nl:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_mke:divider|add_sub_14_result_int[2]~18" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_mke.tdf Line: 57
     Info (17048): Logic cell "lpm_divide:Mod2|lpm_divide_7nl:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_mke:divider|add_sub_14_result_int[1]~20" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_mke.tdf Line: 57
     Info (17048): Logic cell "lpm_divide:Mod1|lpm_divide_tll:auto_generated|sign_div_unsign_slh:divider|alt_u_div_2ie:divider|add_sub_11_result_int[1]~14" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_2ie.tdf Line: 42
+    Info (17048): Logic cell "vga_controller:vga_ins|lpm_divide:Mod2|lpm_divide_6nl:auto_generated|sign_div_unsign_5nh:divider|alt_u_div_kke:divider|add_sub_13_result_int[1]~18" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_kke.tdf Line: 52
+    Info (17048): Logic cell "vga_controller:vga_ins|lpm_divide:Mod1|lpm_divide_sll:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_1ie:divider|add_sub_10_result_int[1]~14" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/db/alt_u_div_1ie.tdf Line: 37
 Warning (20013): Ignored 24 assignments for entity "DE10_LITE_Default" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE10_LITE_Default -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity DE10_LITE_Default -section_id Top was ignored
@@ -798,8 +1647,8 @@ Warning (20013): Ignored 24 assignments for entity "test" -- entity does not exi
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity test -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity test -section_id Top was ignored
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 7 input pin(s) that do not drive logic
+    Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 8 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 2
     Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 2
     Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 2
@@ -807,14 +1656,16 @@ Warning (21074): Design contains 7 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 2
     Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 2
     Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 2
-Info (21057): Implemented 2280 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 12 input pins
-    Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 2216 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 106 warnings
-    Info: Peak virtual memory: 4796 megabytes
-    Info: Processing ended: Sun Nov 15 22:02:23 2020
-    Info: Elapsed time: 00:00:45
-    Info: Total CPU time (on all processors): 00:00:59
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 3
+Info (21057): Implemented 3964 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 14 input pins
+    Info (21059): Implemented 66 output pins
+    Info (21061): Implemented 3883 logic cells
+    Info (21065): Implemented 1 PLLs
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 112 warnings
+    Info: Peak virtual memory: 4842 megabytes
+    Info: Processing ended: Thu Nov 26 22:22:55 2020
+    Info: Elapsed time: 00:00:34
+    Info: Total CPU time (on all processors): 00:00:53
 
 
