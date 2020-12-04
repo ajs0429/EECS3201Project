@@ -1,3 +1,4 @@
+// (C) 2020, Adam Silverman/Tuan Dau
 module ClockDivider500K(
 	input cin,
 	output cout

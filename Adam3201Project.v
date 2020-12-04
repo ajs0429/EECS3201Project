@@ -1,3 +1,4 @@
+// (C) 2020, Adam Silverman/Tuan Dau
 module Adam3201Project(
    input [9:0] SW,
    input [1:0] KEY,
@@ -5,7 +6,7 @@ module Adam3201Project(
    output [9:0] LEDR,
    input G9,
    output G8, G11, G13, G15, G17, G19, G21,
-   output [6:0] HEX5, HEX4, HEX2, HEX1, HEX0,
+   output [7:0] HEX5, HEX4, HEX3, HEX2, HEX1, HEX0,
    output [3:0] VGA_B, VGA_G, VGA_R,
    output VGA_HS, VGA_VS
 );
@@ -23,7 +24,12 @@ Pins:
 8 - Trig
 
 */
-assign LEDR[7:1] = 7'b0;
+assign LEDR[5:2] = 7'b0;
+assign HEX5[7] = 1;
+assign HEX4[7] = 1;
+assign HEX2[7] = 1;
+assign HEX1[7] = 1;
+assign HEX0[7] = 1;
 
 // Construct 500 kHz clock (gives a very close to 2 kHz PWM cycle)
 wire Clock500K;
@@ -37,13 +43,21 @@ seg7 h5(enable ? 4'he : 4'h0, HEX5);
 // Adjusts duty cycle to 4 levels - 255 (100%), 191 (75%), 127 (50%), 63 (25%). Has problems starting in levels 1 and 2.
 // Recommended to only use level 4.
 assign LEDR[9:8] = SW[9:8];
-wire[1:0] switch_pos = SW[9:8] + 1;
-wire[7:0] duty_cycle = (switch_pos << 6) - 8'd1;
+wire[1:0] switch_pos_1 = SW[9:8] + 1;
+wire[7:0] duty_cycle_1 = (switch_pos_1 << 6) - 8'd1;
 seg7 h4(SW[9:8] + 4'd1, HEX4);
 
+assign LEDR[7:6] = SW[7:6];
+wire[1:0] switch_pos_2 = SW[7:6] + 1;
+wire[7:0] duty_cycle_2 = (switch_pos_2 << 6) - 8'd1;
+seg7 h3(SW[7:6] + 4'd1, HEX3);
+assign HEX3[7] = 1'b0;
+
 // PWM drivers
-MotorPWM motor1(Clock500K, 1'b1, enable, duty_cycle, G11, G13, G15);
-MotorPWM motor2(Clock500K, 1'b1, enable, duty_cycle, G21, G17, G19);
+reg direction_1 = 1;
+reg direction_2 = 1;
+MotorPWM motor1(Clock500K, direction_1, enable, duty_cycle_1, G11, G13, G15);
+MotorPWM motor2(Clock500K, direction_2, enable, duty_cycle_2, G21, G17, G19);
 
 // Ultrasonic sensors
 wire [32:0] distance;
@@ -70,4 +84,33 @@ vga_controller vga_ins(.iRST_n(KEY[0]),
                       .oVGA_B(VGA_B),
                       .oVGA_G(VGA_G),
                       .oVGA_R(VGA_R)); 
+							 
+// Autonomy, determine whether or not car is far enough from object
+wire turn = SW[1]; // enable this to turn around instead of move back
+assign LEDR[1] = SW[1];
+reg [12:0] isClose;
+reg moveBack;
+
+wire Clock5;
+ClockDivider5Hz(MAX10_CLK1_50, Clock5);
+
+always @(posedge Clock5) begin
+	if (distance < 20) begin
+		isClose = isClose << 1;
+		isClose[0] = 1;
+	end else begin
+		isClose = isClose << 1;
+		isClose[0] = 0;
+	end
+
+	moveBack = |isClose;
+
+	if (moveBack) begin
+		direction_1 = 0;
+		direction_2 = turn;
+	end else begin
+		direction_1 = 1;
+		direction_2 = 1;
+	end
+end							 
 endmodule

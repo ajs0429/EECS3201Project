@@ -1,3 +1,4 @@
+// (C) 2020, Adam Silverman/Tuan Dau
 module MotorPWM(
 	input cin,
 	input dir, // 1 for forward, 0 for backward
