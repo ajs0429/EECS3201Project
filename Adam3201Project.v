@@ -88,7 +88,7 @@ vga_controller vga_ins(.iRST_n(KEY[0]),
 // Autonomy, determine whether or not car is far enough from object
 wire turn = SW[1]; // enable this to turn around instead of move back
 assign LEDR[1] = SW[1];
-reg [12:0] isClose;
+reg [15:0] isClose;
 reg moveBack;
 
 wire Clock5;

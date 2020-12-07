@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Adam3201Project
-Fri Dec 04 15:16:20 2020
+Sun Dec 06 20:47:19 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -81,15 +81,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Dec 04 15:16:19 2020       ;
+; Analysis & Synthesis Status        ; Successful - Sun Dec 06 20:47:19 2020       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; Adam3201Project                             ;
 ; Top-level Entity Name              ; Adam3201Project                             ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 4,590                                       ;
-;     Total combinational functions  ; 4,565                                       ;
-;     Dedicated logic registers      ; 211                                         ;
-; Total registers                    ; 211                                         ;
+; Total logic elements               ; 4,594                                       ;
+;     Total combinational functions  ; 4,566                                       ;
+;     Dedicated logic registers      ; 214                                         ;
+; Total registers                    ; 214                                         ;
 ; Total pins                         ; 93                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -199,7 +199,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -272,20 +272,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+---------------------+
 ; Resource                                    ; Usage               ;
 +---------------------------------------------+---------------------+
-; Estimated Total logic elements              ; 4,590               ;
+; Estimated Total logic elements              ; 4,594               ;
 ;                                             ;                     ;
-; Total combinational functions               ; 4565                ;
+; Total combinational functions               ; 4566                ;
 ; Logic element usage by number of LUT inputs ;                     ;
 ;     -- 4 input functions                    ; 1092                ;
-;     -- 3 input functions                    ; 1215                ;
+;     -- 3 input functions                    ; 1216                ;
 ;     -- <=2 input functions                  ; 2258                ;
 ;                                             ;                     ;
 ; Logic elements by mode                      ;                     ;
-;     -- normal mode                          ; 3198                ;
+;     -- normal mode                          ; 3199                ;
 ;     -- arithmetic mode                      ; 1367                ;
 ;                                             ;                     ;
-; Total registers                             ; 211                 ;
-;     -- Dedicated logic registers            ; 211                 ;
+; Total registers                             ; 214                 ;
+;     -- Dedicated logic registers            ; 214                 ;
 ;     -- I/O registers                        ; 0                   ;
 ;                                             ;                     ;
 ; I/O pins                                    ; 93                  ;
@@ -297,7 +297,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                     ;
 ; Maximum fan-out node                        ; MAX10_CLK1_50~input ;
 ; Maximum fan-out                             ; 129                 ;
-; Total fan-out                               ; 12847               ;
+; Total fan-out                               ; 12856               ;
 ; Average fan-out                             ; 2.59                ;
 +---------------------------------------------+---------------------+
 
@@ -307,7 +307,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                     ; Entity Name          ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
-; |Adam3201Project                          ; 4565 (17)           ; 211 (14)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 93   ; 0            ; 0          ; |Adam3201Project                                                                                                                        ; Adam3201Project      ; work         ;
+; |Adam3201Project                          ; 4566 (18)           ; 214 (17)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 93   ; 0            ; 0          ; |Adam3201Project                                                                                                                        ; Adam3201Project      ; work         ;
 ;    |ClockDivider500K:cdiv500k|            ; 27 (27)             ; 19 (19)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|ClockDivider500K:cdiv500k                                                                                              ; ClockDivider500K     ; work         ;
 ;    |ClockDivider5Hz:comb_47|              ; 41 (41)             ; 26 (26)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|ClockDivider5Hz:comb_47                                                                                                ; ClockDivider5Hz      ; work         ;
 ;    |MotorPWM:motor1|                      ; 10 (10)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Adam3201Project|MotorPWM:motor1                                                                                                        ; MotorPWM             ; work         ;
@@ -446,7 +446,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 211   ;
+; Total registers                              ; 214   ;
 ; Number of registers using Synchronous Clear  ; 78    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 40    ;
@@ -1404,28 +1404,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 93                          ;
-; cycloneiii_ff         ; 211                         ;
+; cycloneiii_ff         ; 214                         ;
 ;     CLR               ; 30                          ;
 ;     ENA               ; 28                          ;
 ;     ENA CLR           ; 10                          ;
 ;     ENA SCLR          ; 33                          ;
 ;     SCLR              ; 45                          ;
-;     plain             ; 65                          ;
-; cycloneiii_lcell_comb ; 4583                        ;
+;     plain             ; 68                          ;
+; cycloneiii_lcell_comb ; 4584                        ;
 ;     arith             ; 1367                        ;
 ;         1 data inputs ; 6                           ;
 ;         2 data inputs ; 203                         ;
 ;         3 data inputs ; 1158                        ;
-;     normal            ; 3216                        ;
+;     normal            ; 3217                        ;
 ;         0 data inputs ; 208                         ;
 ;         1 data inputs ; 54                          ;
 ;         2 data inputs ; 1805                        ;
-;         3 data inputs ; 57                          ;
+;         3 data inputs ; 58                          ;
 ;         4 data inputs ; 1092                        ;
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 71.70                       ;
-; Average LUT depth     ; 55.64                       ;
+; Average LUT depth     ; 55.61                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1434,7 +1434,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:15     ;
+; Top            ; 00:00:12     ;
 +----------------+--------------+
 
 
@@ -1444,7 +1444,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri Dec 04 15:15:37 2020
+    Info: Processing started: Sun Dec 06 20:46:45 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Adam3201Project -c Adam3201Project
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -1817,15 +1817,15 @@ Warning (21074): Design contains 5 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 3
     Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 3
     Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/adamj/Dropbox/School 2020-21/Fall Semester/EECS 3201/Adam3201Project/Adam3201Project.v Line: 4
-Info (21057): Implemented 4692 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4695 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 14 input pins
     Info (21059): Implemented 79 output pins
-    Info (21061): Implemented 4598 logic cells
+    Info (21061): Implemented 4601 logic cells
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 110 warnings
-    Info: Peak virtual memory: 4878 megabytes
-    Info: Processing ended: Fri Dec 04 15:16:20 2020
-    Info: Elapsed time: 00:00:43
-    Info: Total CPU time (on all processors): 00:01:00
+    Info: Peak virtual memory: 4870 megabytes
+    Info: Processing ended: Sun Dec 06 20:47:19 2020
+    Info: Elapsed time: 00:00:34
+    Info: Total CPU time (on all processors): 00:00:47
 
 
